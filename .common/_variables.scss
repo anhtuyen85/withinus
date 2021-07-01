@@ -1,0 +1,122 @@
+/*remove_production*/ 
+  {%- liquid
+    assign font_body_base_size = settings.body_font_size | times: 0.625
+
+    assign header_font_type 	= settings.header_shopify_font
+    assign body_font_type 		= settings.body_shopify_font
+
+    assign header_font_thin = header_font_type | font_modify: 'weight', '100'
+    assign header_font_extra_light = header_font_type | font_modify: 'weight', '200'
+    assign header_font_light = header_font_type | font_modify: 'weight', '300'
+    assign header_font_regular = header_font_type | font_modify: 'weight', '400'
+    assign header_font_medium = header_font_type | font_modify: 'weight', '500'
+    assign header_font_semi_bold = header_font_type | font_modify: 'weight', '600'
+    assign header_font_bold = header_font_type | font_modify: 'weight', '700'
+
+    assign body_font_thin = body_font_type | font_modify: 'weight', '100'
+    assign body_font_extra_light = body_font_type | font_modify: 'weight', '200'
+    assign body_font_light = body_font_type | font_modify: 'weight', '300'
+    assign body_font_regular = body_font_type | font_modify: 'weight', '400'
+    assign body_font_medium = body_font_type | font_modify: 'weight', '500'
+    assign body_font_semi_bold = body_font_type | font_modify: 'weight', '600'
+    assign body_font_bold = body_font_type | font_modify: 'weight', '700'
+
+  -%}
+  
+  {{ header_font_thin | font_face: font_display: 'swap' }}
+  {{ header_font_extra_light | font_face: font_display: 'swap' }}
+  {{ header_font_light | font_face: font_display: 'swap' }}
+  {{ header_font_regular | font_face: font_display: 'swap' }}
+  {{ header_font_medium | font_face: font_display: 'swap' }}
+  {{ header_font_semi_bold | font_face: font_display: 'swap' }}
+  {{ header_font_bold | font_face: font_display: 'swap' }}
+
+  {{ body_font_thin | font_face: font_display: 'swap' }}
+  {{ body_font_extra_light | font_face: font_display: 'swap' }}
+  {{ body_font_light | font_face: font_display: 'swap' }}
+  {{ body_font_regular | font_face: font_display: 'swap' }}
+  {{ body_font_medium | font_face: font_display: 'swap' }}
+  {{ body_font_semi_bold | font_face: font_display: 'swap' }}
+  {{ body_font_bold | font_face: font_display: 'swap' }}
+
+  :root {
+--body-base-size: 62.5%;
+  --font-heading: 'Inter', sans-serif;
+  --heading-size-h1: 60px;
+  --heading-size-h2: 45px;
+  --heading-size-h3: 35px;
+  --heading-size-h4: 24px;
+  --heading-size-h5: 20px;
+  --heading-size-h6: 14px;
+  --heading-1-weight: 400;
+  --heading-2-weight: 400;
+  --heading-3-weight: 600;
+  --heading-4-weight: 400;
+  --heading-5-weight: 400;
+  --heading-6-weight: 400;
+  --header-bg-desk: #ffffff;
+  --header-text-color-desk: #002E25;
+  --icon-number-color: #ffffff;
+  --bg-cart-number: #509879;
+  --header-bg-mobile: #0C3E34;
+  --header-text-color-mobile: #F5F5F5;
+  --body-font-family: 'Inter', sans-serif;
+  --body-font-size:  1.6rem;
+  --body-font-weight: 400;
+  --main-color: #002E25;
+  --main-text-color: #fff;
+  --main-color-rgba: 16, 49, 120;
+  --body-border-color: #E0E1E3;
+  --body-bg-color: #fff;
+  --body-color: #42474C;
+  --body-link: #1E1F21;
+  --border-radius-default: 999;
+  --section-heading-cl: #002E25;
+  --section-heading-fw: 600;        
+  --section-subheading-cl: #002E25;        
+  --section-subheading-fw: 400;   
+
+  --btn1-fw: 600;
+  --btn1-cl: #0c3e34;
+  --btn1-bg-cl: #ffffff;
+  --btn1-hover-cl: #fff;
+  --btn1-hover-bg-cl: #12a05c;
+  --btn1-border-width: 0px;
+  --btn1-border-cl:transparent;
+  --btn1-hover-border-cl: transparent;
+
+  --btn2-fw: 600;
+  --btn2-cl: #fff;
+  --btn2-bg-cl: #002E25;
+  --btn2-hover-cl: #fff;
+  --btn2-hover-bg-cl: #FF9923;
+  --btn2-border-width: 0px;
+  --btn2-border-cl: transparent;
+  --btn2-hover-border-cl: transparent;
+
+  --btn3-fw: 600;
+  --btn3-cl: #002E25;
+  --btn3-bg-cl: transparent;
+  --btn3-hover-cl: #002E25;
+  --btn3-hover-bg-cl: transparent;
+  --btn3-border-width: 1px;
+  --btn3-border-cl: #F0F2F5;
+  --btn3-hover-border-cl: #002E25;
+
+  --price-color: #b44022;
+  --rating-star-color: #FF9923;
+  --rating-star-empty-color: #9BABCD;
+  --footer-bg: #0C3E34;
+  --footer-text-cl: #f5f5f5;
+  --bg-white: #ffffff;
+  --gutter-xlg: 40px;
+  --gutter-lg: 30px;
+  --gutter-md: 25px;
+  --gutter-sm: 20px;
+  --gutter-xs: 15px;
+  --gutter-xxs: 10px;
+
+  --body-14: 14px;
+}
+
+/*end_remove_production*/ 

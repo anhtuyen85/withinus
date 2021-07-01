@@ -1,0 +1,116 @@
+.section-featured-products {
+	.product-info {
+		padding: 0 15px;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.product-item {
+		align-items: center;
+	}
+	.product-name {
+		font-size: 30px;
+		line-height: 30px;
+		font-weight: 700;
+		color: var(--body-second-color);
+	}
+	.product-price {
+		margin: 12px 0;
+		font-size: 30px;
+		line-height: 30px;
+		color: var(--body-second-color);
+	}
+	.compare-at-price {
+		font-size: 30px;
+	}
+	.product-swatch {
+		.swatch-group {
+			margin: 0 -7px;
+		}
+		.swatch-title {
+			padding: 0 10px 10px;
+		}
+		.input-group {
+			margin: 0 7px 0;
+			label {
+				padding: 16px 5px 17px;
+				border: 1px solid #D4909A;
+				text-transform: uppercase;
+				cursor: pointer;
+				position: relative;
+				letter-spacing: 1.5px;
+				max-width: 250px;
+				min-width: 170px;
+				width: 100%;
+				text-align: center;
+				overflow: hidden;
+			}
+			input:checked + label {
+				background: var(--main-color);
+				color: #fff;
+			}
+			input[disabled] + label {
+				color: #BABCBF;
+				border-color: #BABCBF;
+				pointer-events: none;
+				&:before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: calc(100% + 15px);
+					height: 1px;
+					background-color: #babcbf;
+					transform: translate(-50%, -50%) rotate(12.5deg);
+				}
+			}
+		}
+		.swatch-select {
+			display: flex;
+			flex-wrap: wrap;
+			input {
+				display: none;
+			}
+		}
+	}
+	.product-description {
+		font-size: 18px;
+		line-height: 30px;
+		p {
+			margin: 22px 0;
+		}
+		p:empty {
+			margin: 0;
+		}
+	}
+	.js-btn-redirect {
+		width: 100%;
+		padding: 13px 30px 15px;
+		font-size: 22px;
+		line-height: 30px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 47px;
+	}
+	@media (min-width: 992px) {
+		.product-list {
+			>div:nth-child(even) {
+				.product-media {
+					order: 2;
+				}
+			}
+			>div:not(:last-child) {
+				padding-bottom: 60px;
+			}
+		}
+		.product-price {
+			margin: 20px 0;
+			font-weight: 700;
+		}
+		.js-btn-redirect {
+			margin-top: 28px;
+			margin-bottom: 0;
+			max-width: 280px;
+		}
+	}
+}

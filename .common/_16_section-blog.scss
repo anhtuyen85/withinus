@@ -1,0 +1,38 @@
+/* Blog */
+.block-item {
+	header {
+		margin: 0 auto 26px;
+	}
+	main {
+		.title {			
+			margin: 0 auto 14px;
+		}
+		.subtext {
+			margin: 0 auto 15px;
+		}
+		a {	
+			font-size: calc(var(--heading-size-h3) - 1px);
+			svg {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+/* End Blog */
+/* Testimonials*/
+.testimonial-item_header {
+	margin: 0 auto 26px;	
+}
+.testimonial-item_body {
+	.title {
+		color: var(--main-color);
+	}
+	.subittle {
+		font-size: calc(var(--heading-size-h4) - 1px);
+		font-weight: 700;
+	}
+	.content {
+		margin: 10px auto 0;
+	}
+}
+/* End Testimonials*/

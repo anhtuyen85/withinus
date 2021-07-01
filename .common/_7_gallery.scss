@@ -1,0 +1,44 @@
+.image-gallery {
+	.gallery-item {
+		position: relative;
+	}
+	.title {
+		@include ab(0,0,n,n);
+		padding: 25px;
+		font-family: var(--ff-heading);
+		p {
+			margin: 0;
+			font-size: 22px;
+			line-height: 30px;
+			font-weight: 700;
+			padding: 8px 0;
+		}
+	}
+	@media (min-width: 992px) {
+		.title {
+			p {
+				font-size: 30px;
+			}
+		}
+	}
+}
+/* paragraph-list */
+.paragraph-list {
+	.section-wrapper {
+		max-width: 990px;
+		margin: 0 auto;
+	}
+	.paragraph-item {
+		font-size: 18px;
+		line-height: 30px;
+		p {
+			margin: 0;
+		}
+	}
+	@media (min-width: 992px) {
+		.paragraph-item {
+			font-size: 24px;
+		}
+	}
+}
+/* end paragraph-list */

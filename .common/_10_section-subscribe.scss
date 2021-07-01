@@ -1,0 +1,64 @@
+.section-subscribe {
+	min-height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.section-wrapper {
+		padding: 0 15px; 
+		font-family: var(--ff-heading);
+		.heading {
+			margin-bottom: 16px;
+		}
+		.subheading {
+			p {
+				margin: 0 0 20px;
+			}
+		}
+	}
+	.form-subscribe {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		max-width: 270px;
+		margin: 0 auto;
+		input {
+			flex: 0 0 100%;
+			margin: 8px;
+			height: 50px;
+			background: #fff;
+			text-align: center;
+			letter-spacing: 1.5px;
+			font-size: 16px;
+			border: 0;
+		}
+		button {
+			margin: 8px;
+			flex: 0 0 100%;
+			height: 50px;
+			letter-spacing: 1.5px;
+			font-size: 16px;
+		}
+	}
+	@media (min-width: 575px) {
+		.form-subscribe {
+			max-width: 100%;
+			input, button {
+				flex: 1;
+				margin: 0 10px;
+			}
+		}
+	}
+}
+
+.container {
+    max-width: 1440px;
+}
+
+ul {
+    list-style-position: outside!important;
+}
+
+.section-wrapper .paragraph-item a:hover {
+    color: #4b5759;
+}

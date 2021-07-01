@@ -1,0 +1,401 @@
+
+/*HEADER*/
+body .header-nav .banner {line-height:15px;}
+
+body .header-nav .header-nav_logo .header-logo {width: 60%;}
+
+.header-nav .container .header-nav_left, .header-nav .container .header-nav_right {
+height: 90px!important;}
+
+body .header-top-bar {
+  padding: 3px 0 3px;}
+
+
+/*svg top menu*/
+body .header-top-bar .header-top-bar_icons .svg-search,
+body .header-top-bar .header-top-bar_icons svg{    
+  width: 20px;
+  height: 20px;
+}
+
+body .header-top-bar .header-top-bar_icons .currencies svg {
+    width: 22px;
+    height: 22px;
+}
+
+body .header-nav .mega-menu .mega-menu-list {max-width:1300px;}
+body .header-nav .title {letter-spacing:1.2px;}
+
+body .header-mobile .menu-item {line-height:46px;}
+
+/*BANNERS*/
+
+@media screen and (min-width: 992px) {
+  .collection-template .collection-template_header,
+  body .section-page-community .section-header{
+    height: 400px!important;
+    min-height: 400px!important;
+  }
+  
+  
+  .section-page-story .section-header{
+  	height: 600px!important;
+  }
+  
+  body .section-collection .section-head {
+	padding-top:10px;	
+	}
+}
+
+.template-page-story #section-page-story .section-header {
+	background-position: top center;
+  background-size: cover;
+}
+
+#section-page-community .section-header {
+  background-size: cover!important;
+}
+
+body .collection-template .collection-title h2 {
+	font-size: 38px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+/*homepage banner*/
+body .js-tns-controls a svg {
+	width: 40px;
+    height: 40px;
+}
+
+body .section-slideshow .slider-controls a {
+    box-shadow: none;
+  	color: #fff;
+  	background:none;
+    height: 140px;
+}
+
+/*STYLES*/
+
+.section-subscribe .form-subscribe button, .section-subscribe .form-subscribe input {font-size: 16px;height:50px;}
+
+.section-subscribe {min-height:400px;}
+
+main#main-content .shopify-policy__container {padding-top:3%;}
+
+.product-price,
+.template .section-featured-products .product-price{
+font-size: 24px;
+    line-height: 30px;
+  font-weight: 600;
+}
+.template-product .product-template .swatch-title,
+.template-product .product-template .product-field-title,
+.section-featured-products .product-swatch .swatch-title,
+.section-page-story .block-featured-products .product-swatch .swatch-title{
+    text-transform: uppercase;
+    font-size: 14px;
+  font-weight: normal;
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 575px){
+  .section-subscribe .form-subscribe {
+  max-width: 75%;
+  }
+}
+
+.section-instagram-custom .instafeed-custom-container .title {color:#4a5759;padding-bottom:0!important;}
+
+body .section-slideshow .content .text-1 {
+    margin-bottom: 10px;
+}
+
+body .section-slideshow .content .text-2 {
+    margin-bottom: 20px;
+}
+
+.section-product-stories .section-body {
+padding-bottom:60px;}
+
+.product-card .product-price {font-size:18px!important}
+
+body .product-template .ingredient-title,
+body .product-stories_item .product-stories_item_inner .name
+{font-size:21px;}
+
+body .product-template .ingredient-content p {letter-spacing:0;}
+
+body #section-section-subscribe .text-1 {
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 45px;
+}
+body #section-section-subscribe .text-2 {
+    font-size: 25px;
+}
+
+body .product-template .product-ingredients .title {
+margin-bottom:30px;
+}
+
+.section-product-stories .section-body {padding-top:40px;}
+
+body .product-template .product-ingredients {
+    padding: 5% 0;
+}
+
+body .product-template .product-title {
+    font-size: 30px;
+  line-height: 40px;
+}
+
+@media screen and (min-width: 1150px){
+body .header-nav .nav-item>a {
+    font-size: 18px;
+} 
+}
+
+
+body .section-page-story .block-featured-products .product-swatch .input-group label,
+body .section-featured-products .product-swatch .input-group label,
+body .product-template .product-swatch .input-group label {
+  padding: 9px 5px 10px;
+}
+
+body .section-page-story .block-single-paragraph .btn,
+body .section-page-story .block-featured-products .js-btn-redirect,
+body .section-featured-products .js-btn-redirect {
+max-width: 200px;
+    padding: 10px 20px 10px;
+    font-size: 16px;
+    height: 50px;
+}
+
+body .product-template .product_short-desc {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body .section-page-story .block-single-paragraph .image,
+body .section-page-community .block-single-paragraph .image{
+width:80px;
+}
+
+body .product-card .product-name,
+body .section-featured-collection .section-body .product-name
+{font-size:20px;}
+
+body .section-slideshow .content .btn {
+    font-size: 18px;
+    line-height: 26px;
+    min-width: 200px;
+    height: 50px;
+    padding: 11px 20px;
+}
+
+h3 {font-size:22px!important;line-height:1.5}
+
+body #collection-template .collection-template_header {background-size:cover;}
+
+body .collection-template .collection-title h2 {color:#fff;}
+
+/*Account pages*/
+body .page-account .input-group input {height: 50px;}
+body .page-account .btn-create-account,
+body .page-account .btn-back{height: 60px;}
+body .page-account .btn-create-account,
+body .page-account .btn-back{font-size:18px;}
+
+/*store locator*/
+body .section-page-store-location .js-map-style {font-size:14px;}
+body .section-page-store-location .page-title {font-size: 32px;}
+
+
+body ul.nav-list li:first-of-type .mega-menu-item.menu-list {width:16.6%;}
+
+/*products*/
+body .product-template .modal-ingredients .modal_wrapper .modal_box, 
+body .product-template .modal-ingredients .modal_wrapper .modal_content {height:auto;}
+
+body .product-template .btn-view-ingredients {font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid;
+}
+
+
+@media (min-width: 992px) {
+.section-product-stories .section-body {
+  
+      padding: 50px 0 60px!important;
+  
+}}
+
+
+@media (min-width: 768px){
+.cart-section .cart-content_table .name {
+    font-size: 21px!important;
+}
+
+.cart-section .line-item_wrapper .line-item_total {
+    font-size: 21px!important;
+}
+
+
+}
+
+
+.cart-section .cart-info .title {
+  
+ font-size: 16px!important; 
+}
+
+.btn-hide {
+  
+ display:none!important; 
+  
+}
+
+
+#shopify-section-collection-wholesale .text-center .subheading a .text-center .subheading a {
+    color: #4B5759!important;
+    
+}
+
+
+
+.product-template .product-form .th_subscription_radio_section .th_subscription_radio_section_outer label {
+    max-width: 350px !important;
+}
+
+
+.th_subscription_radio_section .th_subscription_radio_spg_plan_detail input:checked + label .th_subscription_radio_checked {
+  
+ fill: #fff!important; 
+}
+
+
+.thsb_subscription_description_section .thsb_subscription_description_logo svg {
+display:none;
+}
+
+
+.widget-logo {
+  
+ max-width: 150px;
+  
+}
+
+
+@media (min-width: 575px) {
+.drawer-cart .image, .drawer-cart .proudct-image {
+  max-width:100px;
+  
+  
+  
+}
+
+.drawer-cart .money, .drawer-cart .name, .drawer-cart .product-name, .drawer-cart .product-price {
+  font-size: 18px;
+}
+
+
+.drawer-cart .cart-list {
+    max-height: 275px;
+}
+
+
+}
+
+
+.drawer-cart .product-options {
+ display:none; 
+  
+}
+
+.drawer-cart .cart-item {
+     padding-bottom: 20px; 
+}
+
+.th_subscription_cp_link {
+    color: #4b5759!important;
+}
+ 
+.cart-drawer-bottom {
+  color: #fff;
+    margin-left: -20px;
+    padding: 15px;
+  	position: absolute;
+    width: 100%;
+  background-color: rgba(201, 153, 128, 0.95);
+  bottom:0;
+  	z-index:9999;
+
+  
+}
+
+@media (min-width: 575px){
+  .cart-drawer-bottom {
+
+      margin-left: -35px;
+    
+        padding-bottom: 15px;
+  }
+}
+
+.drawer-cart .cart-total {
+padding-top:0;
+margin-bottom:12px;
+}
+.drawer-cart .cart-total {font-size:18px;}
+
+.drawer-cart .buttons .btn {font-weight:700;}
+
+
+.drawer-cart .lazy-drawer-cart {
+  max-height: -webkit-fill-available;
+}
+
+.drawer-cart.is-open .lazy-drawer-cart {
+
+transition: all .5s ease-in-out;
+  
+}
+
+.cart-upsell {
+overflow-y: auto;
+      overflow: hidden;
+    max-height: 200px;
+  
+}
+
+.th_subscription_radio_section .th_subscription_radio_plans {
+  display: inline!important;
+}
+
+
+#shopify-section-collection-wholesale .text-center .subheading a{
+  color:#df7aa7!important
+}
+
+.col-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.col-10 {
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+.th_subscription_radio_section .th_subscription_radio_interval {
+  padding: 7px!important;
+}
+
+
+.template #stamped-main-widget .stamped-summary-actions-newquestion, .template #stamped-main-widget .stamped-summary-actions-newreview {
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 16px;
+    background: #d4909a;
+}
