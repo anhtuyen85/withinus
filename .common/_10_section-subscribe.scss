@@ -1,64 +1,58 @@
 .section-subscribe {
-	min-height: 400px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	.section-wrapper {
-		padding: 0 15px; 
-		font-family: var(--ff-heading);
+	padding:57px 0;	
+	@media (min-width: 768px) {
+		padding-top: 77px;
+		padding-bottom: 55px;		
+	}
+	.section-body {
+		@media (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
 		.heading {
-			margin-bottom: 16px;
+			font-size: var(--heading-size-h2);
+			color: var(--main-color);
+			font-weight: 700;
+			line-height: 1.12;
+			margin-bottom: 8px;
 		}
 		.subheading {
+			font-size: var(--heading-size-h3);
+			line-height: 1.2;
 			p {
-				margin: 0 0 20px;
+				margin: 0;
+			}
+		}
+		form {
+			max-width: 530px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 30px;			
+			@media (max-width: 479px) {
+				flex-direction: column;
+			}
+			input {
+				@include letter-spacing;
+				font-size: calc(var(--body-font-size) + 2px);
+				flex: 1;				
+				padding: 16px 29px;
+				height: 58px;
+				background: #fff;
+				border: 1px solid #fff;
+				color: var(--body-second-color);
+				@include placeholder {
+					color: var(--body-second-color);
+				}				
+			}
+			.btn {
+				padding-top: 14px;
+				padding-bottom: 14px;
+				@media (max-width: 479px) {
+					margin-top: 8px;
+				}
 			}
 		}
 	}
-	.form-subscribe {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		max-width: 270px;
-		margin: 0 auto;
-		input {
-			flex: 0 0 100%;
-			margin: 8px;
-			height: 50px;
-			background: #fff;
-			text-align: center;
-			letter-spacing: 1.5px;
-			font-size: 16px;
-			border: 0;
-		}
-		button {
-			margin: 8px;
-			flex: 0 0 100%;
-			height: 50px;
-			letter-spacing: 1.5px;
-			font-size: 16px;
-		}
-	}
-	@media (min-width: 575px) {
-		.form-subscribe {
-			max-width: 100%;
-			input, button {
-				flex: 1;
-				margin: 0 10px;
-			}
-		}
-	}
-}
-
-.container {
-    max-width: 1440px;
-}
-
-ul {
-    list-style-position: outside!important;
-}
-
-.section-wrapper .paragraph-item a:hover {
-    color: #4b5759;
 }

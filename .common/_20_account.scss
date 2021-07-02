@@ -1,60 +1,24 @@
 .page-account {
-	background: #fef1e7;
-	min-height: 800px;
-	color: #4B5759;
+	background: #E5E5E5;		
 	padding: 100px 0;
 	.form-group {
-		max-width: 550px;
+		max-width: 520px;
 		margin: 0 auto;
 	}
-	.heading {
-		font-size: 32px;
-		line-height: 50px;
-		font-weight: 700;
-		margin-bottom: 30px;
+	.heading {		
+		margin-bottom: 55px;
+		line-height: 1.3;
+		font-weight: 600;
 	}
 	.subheading {
-		margin-bottom: 43px;
-		a {
-			color: #C99980;
-			font-weight: 500;
-		}
-	}
-	.input-group {
-		margin-bottom: 22px;
-		label {
-			font-size: 18px;
-			line-height: 30px;
-			margin-bottom: 13px;
-		}
-		input {
-			border: 0;
-			height: 56px;
-			letter-spacing: 2.5px;
-			padding: 8px 30px;
-			background: var(--text-miscellaneous);
-		}
-		input::-webkit-input-placeholder {
-			text-transform: uppercase;
-		}
-	}
-	.btn-forgot-password {
-		line-height: 30px;
-		margin-bottom: 13px;
-		color: #C99980;
-		font-size: 18px;
-	}
+		margin-bottom: 41px;	
+	}	
 	.btn-create-account {
-		margin-top: 35px;
-		height: 68px;
-		font-size: 22px;
-		line-height: 30px;
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: var(--body-font-family);
+		margin-top: 9px;		
+		@media (min-width: 768px) {
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
 	}
 	.position-relative {
 		position: relative;
@@ -67,36 +31,27 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			color: var(--body-second-color);
 		}
 	}
 	.terms, .remenber {
-		margin-top: 35px;
+		margin-top: 30px;
 		input[type="checkbox"] {
 			padding: 0;
 			max-width: 20px;
 			width: 100%;
 			height: 20px;
-			margin-top: 6px;
-			margin-right: 16px;
-			border: 1px solid var(--body-color);
+			margin-top: 3px;
+			margin-right: 11px;
+			border: 2px solid var(--body-color);			
+			border-radius: 3px;
 			appearance: auto;
-		}
-		label {
-			font-size: 14px;
-			a {
-				color: #C99980;
-				font-weight: 500;
-			}
-		}
+		}		
 	}
 	.remenber {
 		display: flex;
-		margin-bottom: 35px;
-		position: relative;
-		span {
-			font-size: 18px;
-			line-height: 30px;
-		}
+		margin-bottom: 38px;
+		position: relative;		
 	}
 	.terms {
 		position: relative;
@@ -115,26 +70,21 @@
 		}
 		> label {
 			position: relative;
-			padding-left: 28px;
+			padding-left: 30px;
 			&:before {
 				content: "";
 				display: block;
-				width: 18px;
-				height: 18px;
-				flex: 0 0 18px;
-				border-radius: 4px;
-				border: 2px solid var(--body-border-color);
-				margin-right: 10px;
-				margin-top: 5px;
-				position: absolute;
-				left: 0;
-				top: 1px;
+				width: 20px;
+				height: 20px;								
+				border: 2px solid var(--body-color);				
+				border-radius: 3px;
+				@include ab(3px, 0, n, n);
 			}
 			&:after {
-				content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='#2d2df5' d='M12 1.74109L4.2672 10L0 5.42655L1.63303 3.68849L4.27004 6.51477L10.3698 0L12 1.74109Z'%3E%3C/path%3E%3C/svg%3E"); 
+				content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='#4B5759' d='M12 1.74109L4.2672 10L0 5.42655L1.63303 3.68849L4.27004 6.51477L10.3698 0L12 1.74109Z'%3E%3C/path%3E%3C/svg%3E"); 
 				position: absolute;
 				top: 0;
-				left: 3px;
+				left: 4px;
 				right: 0;
 				visibility: hidden;
 			}
@@ -143,21 +93,19 @@
 	.separator {
 		position: relative;
 		text-align: center;
-		border-bottom: 1px solid #C99980;
+		border-bottom: 1px solid var(--body-link);
 		&:before {
-			content: "OR";
-			position: absolute;
-			left: 50%;
-			top: -9px;
-			font-weight: 800;
-			margin-left: -20px;
-			width: 40px;
-			background: #fef1e7;
+			content: "OR";			
+			font-weight: 700;			
+			padding: 0 10px;
+			background: #e5e5e5;
 			z-index: 1;
+			transform: translate(-50%, -50%);
+			@include ab(50%, 50%, n, n);			
 		}
 	}
 	.form-bottom {
-		margin-top: 40px;
+		margin-top: 42px;
 		.social-login {
 			align-items: center;
 		}
@@ -165,20 +113,21 @@
 			display: flex;
 			margin: 0 13px;
 			svg,path {
-				fill: #C99980;
+				fill: var(--body-link);
 			}
 		}
 		h2 {
-			margin-top: 60px;
+			margin-top: 55px;
 			font-weight: 700;
+			font-size: var(--heading-size-h3);
 		}
 		p {
-			margin: 13px auto 0;
-			font-size: 18px;
+			margin: 11px auto 24px;			
 			max-width: 420px;
 		}
 		a.btn-create-account {
-			max-width: 345px;
+			width: 100%;
+			max-width: 350px;
 			margin-right: auto;
 			margin-left: auto;
 		}
@@ -194,7 +143,7 @@
 		background: var(--btn2-bg-cl);
 		height: 68px;
 		text-transform: uppercase;
-		letter-spacing: 1.5px;
+		@include letter-spacing;
 		font-size: 22px;
 		font-family: var(--body-font-family);
 		&:hover {
@@ -203,14 +152,7 @@
 				background: var(--btn2-hover-bg-cl);
 			}
 		}
-	}
-	@media (min-width: 768px) {
-		min-height: 1200px;
-		.heading {
-			font-size: 48px;
-			line-height: 60px;
-		}
-	}
+	}	
 	.account-sale {
 		h3 {
 			margin-bottom: 20px;
@@ -365,7 +307,7 @@
 }
 .template-customers-addresses {
 	#main-content {
-		background: #fef1e7;
+		background: #E5E5E5;
 	}
 }
 .th_subscription_cp_link {
@@ -393,7 +335,7 @@
 }
 .template-customers-activate_account {
 	#main-content {
-		background: #fef1e7;
+		background: #E5E5E5;
 		padding: 100px 0;
 	}
 	#template {

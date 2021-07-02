@@ -1,84 +1,52 @@
 .section-paragraphs-icons {
-	.icon-item {
-		padding-top: 20px;
-		padding-bottom: 20px;
-		.icon {
-			max-width: 150px;
-			height: 150px;
-			padding: 10px;
-			margin: 0 auto;
-			>svg {
-				height: 90px;
+	.paragraphs-icons_list {
+		@media (min-width: 992px) {
+			padding-right: 30px;
+		}
+		.paragraphs-icons_title {
+			color: var(--main-color);
+			font-size: var(--heading-size-h4);
+			margin-bottom: 30px;
+			text-align: center;
+			@media (min-width: 768px) {
+				font-size: var(--heading-size-h2);
+				margin-bottom: 42px;
+				text-align: left;
 			}
 		}
-		.title {
-			margin-top: 25px;
-		}
-	}
-	.section-body {
-		padding: 60px 0;
-	}
-	.paragraphs-icons_item {
-		padding: 20px 0;
-		font-size: 18px;
-		line-height: 30px;
-		flex-wrap: wrap;
-		.icon {
-			max-width: 140px;
-			height: 140px;
-			width: 100%;
-			padding: 10px;
-			margin: 0 auto;
-			svg {
-				width: 140px;
-				height: 140px;
+		.paragraphs-icons_item {	
+			@media (max-width: 767px) {
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
 			}
-		}
-	}
-	.icon-list {
-		padding: 30px 0;
-	}
-	.paragraph {
-		text-align: center;
-		margin-top: 20px;
-		p {
-			margin: 0;
-		}
-	}
-	@media (min-width: 575px) {
-		.paragraphs-icons_item {
-			flex-wrap: nowrap;
-		}
-		.paragraph {
-			margin-top: 0;
-			padding-left: 20px;
-			text-align: left;
-		}
-	}
-	@media (min-width: 768px) {
-		.paragraphs-icons_item {
 			.icon {
-				max-width: 90px;
-				height: 90px;
-				width: 100%;
+				flex: 0 0 73px;
+				max-width: 73px;				
+				margin-bottom: 17px;
+				@media (min-width: 768px) {
+					margin: 0 32px 0 0;
+				}
 				svg {
-					width: 19px;
-					height: 90px;
+					display: flex;
 				}
 			}
+			.paragraph {
+				flex: 1;
+				p {
+					margin: 0;
+				}
+			}
+			&:not(:last-child) {
+				margin-bottom: 45px;
+			}
 		}
 	}
-	@media (min-width: 992px) {
-		.icon-list {
-			padding: 50px 0;
+	.image {
+		@media (max-width: 991px) {
+			margin-top: 40px;
 		}
-		.section-body {
-			padding: 105px 0 112px;
-		}
-	}
-	@media (min-width: 1200px) {
-		.paragraphs-icons_item {
-			padding-right: 80px;
+		@media (min-width: 992px) {
 			padding-left: 30px;
 		}
 	}

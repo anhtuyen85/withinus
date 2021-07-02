@@ -323,8 +323,12 @@
     opacity: 1;
     transform: translate3d(0,0,0) scale(1);
 }
-
-
+@mixin letter-spacing {
+    letter-spacing: 1.5px;
+}
+@mixin font-16 {
+    font-size: calc(var(--body-font-size) - 2px);
+}
 /*manage z-index*/ 
 @function layer($name) {
 @if map-has-key($layer, $name) {

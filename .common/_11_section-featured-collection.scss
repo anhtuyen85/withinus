@@ -1,34 +1,12 @@
 .section-featured-collection {
 	.container {
-		padding-right: 0;
-	}
-	.section-body {
-		position: relative;
-		.product-card_footer .btn-add-to-cart {
-			min-width: 180px;
-			font-size: 14px;
-			height: 48px;
-		}
-		.product-name {
-			font-size: 20px;
-		}
-		.product-price {
-			font-size: 25px;
+		@media (max-width: 767px) {
+			padding-right: 0;
 		}
 	}
-	@media (min-width: 768px) {
-		.container {
-			padding-right: 15px;
-		}
-		.tns-nav {
-			margin-top: 60px;
-		}
-	}
-	@media (min-width: 992px) {
-		.section-body {
-			.product-name {
-				font-size: 24px;
-			}
+    .slider-list {
+		@media (min-width: 1025px) {
+			padding-bottom: 20px;
 		}
 	}
 }

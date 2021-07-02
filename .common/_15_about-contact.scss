@@ -478,7 +478,7 @@
 					text-transform: uppercase;
 					cursor: pointer;
 					position: relative;
-					letter-spacing: 1.5px;
+					@include letter-spacing;
 					max-width: 250px;
 					min-width: 170px;
 					width: 100%;
@@ -528,7 +528,7 @@
 			padding: 13px 30px 15px;
 			font-size: 22px;
 			line-height: 30px;
-			letter-spacing: 1.5px;
+			@include letter-spacing;
 			text-transform: uppercase;
 			text-align: center;
 			margin-bottom: 47px;
@@ -726,7 +726,7 @@
 		height: 68px;
 		min-width: 235px;
 		text-transform: uppercase;
-		letter-spacing: 1.5px;
+		@include letter-spacing;
 		font-size: 22px;
 		line-height: 30px;
 	}

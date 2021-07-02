@@ -19,9 +19,10 @@
 	}
 	.instafeed-custom-container {
 		.title {
-			font-size: var(--heading-size-h3);
-			font-weight: var(--heading-3-weight);
-			padding-bottom: 44px;
+			font-size: var(--heading-size-h2);
+			font-weight: var(--heading-2-weight);			
+			color: var(--main-color);
+			margin: 0 auto 30px;
 		}
 		.btn { 
 			margin-top: 25px;
@@ -76,6 +77,48 @@
 			.btn {
 				margin-top: 33px;
 			}
+			> a {
+				font-size: var(--heading-size-h3);
+				font-weight: 700;
+				svg {
+					margin-left: 11px;
+				}
+			}
 		}
 	}
+}
+#insta-feed {
+    margin-left: -7.5px !important;
+    margin-right: -7.5px !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    @media (min-width: 768px) {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+    h2 {
+        font-family: var(--ff-heading) !important;    
+        margin-bottom: 40px !important;
+    }
+    .instafeed-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        @media (min-width: 768px) {
+            padding-left: 7.5px !important;
+            padding-right: 7.5px !important;
+        }
+        img,
+        .instafeed-overlay {
+            width: calc(100% - 15px) !important;
+            height: calc(100% - 15px) !important;
+            left: 7.5px !important;
+            right: 7.5px !important;
+            @media (min-width: 768px) {
+                width: calc(100% - 30px) !important;
+                height: calc(100% - 30px) !important;
+                left: 15px !important;
+                right: 15px !important;
+            }
+        }         
+    }
 }
