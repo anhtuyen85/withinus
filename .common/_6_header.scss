@@ -5,6 +5,16 @@
       &:not(:last-child) {
         margin-right: 18px;
       }
+      a {
+        &:hover {
+          @media (hover : hover) {
+            color: var(--body-link) !important;
+            svg path {
+              fill: currentColor;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -369,9 +379,8 @@
   .header-mobile__item {
     @include translateX(-100%);
     @extend %transition;
-    background: var(--main-color);
-    @include fixed(139px,0,0,0);
-    height: calc(100% - 139px);
+    background: #e5e5e5;
+    @include fixed(63px,0,0,0);    
     width: 100%;
     z-index: layer(header-mobile__horizontal);
     &.is-open {
@@ -396,7 +405,9 @@
     border-top: 1px solid #eee;
   }
   .menu-item {
-    font-size: 24px;
+    @include font-16;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     line-height: 36px;
     padding: 6px 0;
     display: flex;
@@ -406,7 +417,7 @@
       flex: 1; 
     }
     &.title {
-      color: var(--body-second-color);
+      color: var(--main-color);
       >a {
         padding-left: 0;
         padding-right: 30px;
@@ -444,7 +455,7 @@
       padding: 30px 0;
       overflow-y: auto;
       z-index: layer(mobile-dropdown-submenu);
-      background: var(--main-color);
+      background: #e5e5e5;
       will-change: transform;
       @extend %transition;
     }
@@ -454,15 +465,20 @@
         }
       }
   }
-  .drawer-bottom {
-    height: 70px;
-    padding: 5px 15px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #eee;
-    font-size: 29px;
-    line-height: 30px;
+  .drawer-bottom {           
     @include ab(n,0,0,0);
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 5px 15px;
+      margin: 0;
+      height: 68px;    
+      color: var(--btn1-cl) !important;
+      background: var(--btn1-bg-cl);
+      text-transform: uppercase;
+      font-size: var(--heading-size-h5);
+    }
   }
 }

@@ -10,3 +10,30 @@
 		}
 	}
 }
+.section-featured-collections {
+	.collection-list {
+		.collection-item {
+			.collection-title {
+				background: rgba(68, 195, 191, 0.4);				
+				color: var(--main-text-color);
+				font-size: calc(var(--heading-size-h4) - 1px);
+				font-weight: 700;
+				text-align: center;
+				height: 50%;
+				@extend %transition;
+				@include visibility-hidden;
+				@media (min-width: 768px) {
+					font-size: var(--heading-size-h3);
+				}
+			}	
+			&:hover {
+				@media (hover : hover) {
+					.collection-title {
+						@include visibility-visible;
+						height: 100%;
+					}
+				}
+			}		
+		}
+	}
+}

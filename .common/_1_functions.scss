@@ -267,18 +267,18 @@
     width: -moz-fit-content;
     width: fit-content;  
 }
-%visibility-hidden {
+@mixin visibility-hidden {
     visibility: hidden;
     z-index: -2;
     opacity: 0;
 }
-%visibility-visible {
+@mixin visibility-visible {
     visibility: visible;
     z-index: 99992;
     opacity: 1;
 }
 %transition {
-    transition: all 0.2s ease-in-out 0s;
+    transition: all 0.35s ease-in-out 0s;
 }
 %fw-custom-1 {
     font-weight: 500;
@@ -328,6 +328,13 @@
 }
 @mixin font-16 {
     font-size: calc(var(--body-font-size) - 2px);
+}
+@mixin font-14 {
+    font-size: calc(var(--body-font-size) - 4px);
+}
+@mixin padding-mobile {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 /*manage z-index*/ 
 @function layer($name) {

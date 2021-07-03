@@ -1,4 +1,5 @@
 .section-instagram-custom {
+	overflow: hidden;
 	.featured-images {		
 		width: 100%;
 		margin: 0 auto;
@@ -17,12 +18,19 @@
 			padding-top: 12px;
 		}
 	}
-	.instafeed-custom-container {
+	.instafeed-custom-container {		
+		@media (max-width: 767px) {
+			padding: 0 15px;
+		}
 		.title {
-			font-size: var(--heading-size-h2);
+			font-size: var(--heading-size-h4);
 			font-weight: var(--heading-2-weight);			
 			color: var(--main-color);
-			margin: 0 auto 30px;
+			margin: 0 auto 20px;			
+			@media (min-width: 768px) {
+				margin-bottom: 30px;
+				font-size: var(--heading-size-h2);
+			}
 		}
 		.btn { 
 			margin-top: 25px;
@@ -33,14 +41,7 @@
 			letter-spacing: 2.5px;
 			line-height: 30px;
 			padding: 11px 20px;
-		}
-		@media (max-width: 767px) {
-			.instafeed-container {
-				width: 43% !important; 
-				padding-top: 43%!important;
-				margin: 10px;
-			}
-		}
+		}		
 	}
 	.modal_box {
 		max-width: 650px;
@@ -107,6 +108,10 @@
             padding-left: 7.5px !important;
             padding-right: 7.5px !important;
         }
+		@media (max-width: 767px) {
+			width: 50% !important; 
+			padding-top: 50% !important;
+		}
         img,
         .instafeed-overlay {
             width: calc(100% - 15px) !important;
