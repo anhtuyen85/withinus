@@ -129,13 +129,13 @@
 				}
 			}	
 			.btn {
-				@media (max-width: 767px) {
-					width: 100%;
-					max-width: 290px;
-					height: 70px;
-					display: inline-flex;
-					align-items: center;
-					justify-content: center;
+				width: 100%;
+				max-width: 290px;
+				height: 68px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				@media (max-width: 767px) {					
 					font-size: calc(var(--body-font-size) + 2px);
 				}				
 			}	

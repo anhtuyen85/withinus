@@ -41,13 +41,13 @@
 				margin-bottom: 45px;
 			}
 		}
-	}
-	.image {
-		@media (max-width: 991px) {
-			margin-top: 40px;
+		+ .image {
+			@media (max-width: 991px) {
+				margin-top: 40px;
+			}
+			@media (min-width: 992px) {
+				padding-left: 30px;
+			}
 		}
-		@media (min-width: 992px) {
-			padding-left: 30px;
-		}
-	}
+	}	
 }

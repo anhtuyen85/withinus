@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  line-height: 1.35;
+  line-height: 1.5;
   background: var(--body-bg-color);
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
@@ -26,6 +26,9 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
+  @media (min-width: 768px) {
+    line-height: 1.35;
+  }
 }
 
 * {
@@ -164,38 +167,38 @@ select {
 }
 
 input, textarea {
-  padding: 5px 15px;
+  padding: 9px 18px;
+  border: 2px solid var(--main-color);
+  color: var(--body-second-color);
+  text-transform: uppercase;  
+  background: transparent;  
+  @include letter-spacing;
+  @include font-16;
+  @media (min-width: 768px) {
+    font-size: calc(var(--body-font-size) + 2px);
+    padding: 12px 22px;   
+  }
+  @include placeholder {
+    color: var(--body-second-color);
+  }	
 }
 
 input:focus, textarea:focus {
   border: 2px solid rgba(var(--main-color-rgba), 0.5);
 }
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-moz-placeholder, textarea:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #BBBDC3;
-}
-
 input {
-  height: 58px;
-  border: 2px solid var(--main-color);
-  padding: 12px 22px;
-  line-height: 30px;
-  color: var(--body-second-color);
-  text-transform: uppercase;
-  font-size: calc(var(--body-font-size) + 2px);
-  background: transparent;  
-  @include letter-spacing;
-  @include placeholder {
-    color: var(--body-second-color);
-  }	
+  height: 48px;    
+  line-height: 30px;  
+  @media (min-width: 768px) {   
+    height: 58px;
+  } 
 }
 input[type="password"] {
   text-transform: inherit !important;
 }
 textarea {
   width: 100%;
-  height: 272px;
-  border: 1px solid var(--body-border-color);
+  height: 285px;  
 }
 .input-group {
   margin: 0 0 23px;
@@ -436,8 +439,8 @@ textarea {
   }
 }
 .shopify-challenge__button {
-  height: 56px;
-  font-size: 18px;
+  height: 58px;
+  font-size: calc(var(--body-font-size) + 2px);
   text-transform: uppercase;
 }
 #back-to-top {
@@ -1082,7 +1085,7 @@ input::-webkit-inner-spin-button {
   .product-card_footer {
     margin-top: auto;
     .btn {
-      width: 100%;
+      width: 100%;     
       &.sold-out {        
         pointer-events: none;
         background: #BDBDBD;
@@ -1194,7 +1197,7 @@ input::-webkit-inner-spin-button {
     font-weight: 700;
     @media (min-width: 768px) {
       padding: 11px 40px;
-      font-size: 14px;
+      @include font-14;
     }
   }
 }
@@ -2076,7 +2079,12 @@ main#main-content .shopify-policy__container {padding-top:3%;}
 .fa-star, .fa-star-checked, .fa-star-half-o, .fa-star-o, .stamped-fa-star, .stamped-fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star-o {
   color: var(--rating-star-color);
   //  color: var(--rating-star-empty-color);
-  &:before {
-    font-size: 22px;
+  &:before {    
+    @media (min-width: 576px) {
+      font-size: 22px;
+    }
   }
+}
+.postion-relative {
+  position: relative;
 }

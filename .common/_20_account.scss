@@ -14,12 +14,12 @@
 		margin-bottom: 41px;	
 	}	
 	.btn-create-account {
-		margin-top: 9px;		
+		margin-top: 9px;
 		@media (min-width: 768px) {
 			padding-top: 14px;
 			padding-bottom: 14px;
-		}
-	}
+		}				
+	}	
 	.position-relative {
 		position: relative;
 		.js-btn-toggle-input {
@@ -141,11 +141,15 @@
 		margin-top: 15px;
 		color: var(--btn2-cl);
 		background: var(--btn2-bg-cl);
-		height: 68px;
-		text-transform: uppercase;
-		@include letter-spacing;
-		font-size: 22px;
+		height: 46px;
+		text-transform: uppercase;		
 		font-family: var(--body-font-family);
+		@include letter-spacing;
+		@include font-16;
+		@media (min-width: 768px) {
+			height: 58px;
+			font-size: calc(var(--body-font-size) + 2px);
+		}
 		&:hover {
 			@media (hover:hover) {
 				color: var(--btn2-hover-cl);

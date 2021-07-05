@@ -160,11 +160,12 @@
     @include fixed(0,n,n,0);
     height: 100%;
     width: 100%;
-    padding: 25px 20px;
-    background: var(--body-bg-color);
+    max-width: 375px;
+    padding: 60px 40px;
+    background: #e5e5e5;
     @include translateX(100%);
     visibility: hidden;
-    opacity: 0;
+    opacity: 0;    
     @extend %transition;
     z-index: layer(lazy-drawer-cart);
   }
@@ -186,6 +187,7 @@
     width: 35px;
     height: 35px;
     line-height: 40px;
+    text-align: right;
     svg {
       width: 14px;
       height: 14px;
@@ -199,13 +201,11 @@
   .drawer-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;    
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--body-border-color);
     h3 {
-      line-height: 35px;
-      font-size: 20px;
+      font-size: var(--heading-size-h5);
+      @include letter-spacing;
     }
   }
   .input-group {
@@ -255,13 +255,21 @@
       display: block;
       padding: 20px 0;
     }
-  }
-  @media (min-width: 768px) {
-    .drawer-wrapper {
-      width: 400px;
-      @include translateX(400px);
+  } 
+  .tag-list {
+    overflow: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 180px);
+    li {
+      padding: 8px 0;
+      text-transform: uppercase;
+      @include font-14;
+      @include letter-spacing;
+      &.active {
+        color: var(--body-link);
+      }
     }
-  }
+  } 
 }
 .results {
   display: none;
@@ -383,22 +391,24 @@
     @include fixed(63px,0,0,0);    
     width: 100%;
     z-index: layer(header-mobile__horizontal);
+    display: flex;
+    flex-direction: column;
     &.is-open {
       @include translateX(0);
     }
   }
   .drawer-body {
     width: 100%;
-    height: calc(100% - 70px);
-    max-height: 520px;
-    padding: 30px 0;
+    height: 100%;    
+    padding: 30px 0 80px;
     text-align: center;
-    margin: 0 auto;
-    overflow-y: auto;
+    margin: 0 auto;    
     .menu-list {
       width: 100%;
-      padding: 20px 30px;
+      height: 100%;
+      padding: 0 30px;
       overflow: hidden;
+      overflow-y: auto;
     }
   }
   .menu-list--sub {
@@ -467,6 +477,7 @@
   }
   .drawer-bottom {           
     @include ab(n,0,0,0);
+    z-index: 9;
     a {
       display: flex;
       align-items: center;
