@@ -1,6 +1,8 @@
 /* Contact page */
 .page-contact,
-.section-testimonial-page {
+.section-testimonial-page,
+.section-ambassadors-page,
+.section-product-info-page {
 	background: #e5e5e5;	
 	.image__style {
 		img {
@@ -122,11 +124,14 @@
 	}		
 }
 /* #End Contact page */
-/* Testimonials */
-.section-testimonial-page {	
+/* Testimonials & Our Ambassadors */
+.section-testimonial-page,
+.section-ambassadors-page {	
 	@media (min-width: 768px) {
 		padding-bottom: 200px;
 	}
+}
+.section-testimonial-page {
 	.tag-list {				
 		@media (min-width: 768px) {
 			display: flex !important; 			
@@ -173,16 +178,20 @@
 		@include letter-spacing;
 	}
 }
-.testimonial-list {
-	.testimonial-item {
+.testimonial-list,
+.ambassador-list {
+	.testimonial-item,
+	.ambassador-item {
 		margin-bottom: 45px;
-		.testimonial-item_image {
+		.testimonial-item_image,
+		.ambassador-item_image {
 			margin-bottom: 30px;
 			@media (min-width: 768px) {
 				margin-bottom: 28px;
 			}
 		}
-		.testimonial-item_content {
+		.testimonial-item_content,
+		.ambassador-item_content {
 			.title {
 				font-size: var(--heading-size-h4);
 				margin-bottom: 10px;
@@ -202,71 +211,108 @@
 .section-instagram-custom {
 	background: #e5e5e5;
 }
-/* End Testimonials */
-
-
-
-
-
-
-/* section-page-community */
-.section-page-community {
+.section-ambassadors-page {
 	.section-header {
-		min-height: 260px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: var(--text-miscellaneous);
+		@media (min-width: 768px) {
+			margin-bottom: 40px;			
+		}
 	}
-	.page-title {
-		font-size: 26px;
-		line-height: 40px;
-		font-weight: 700;
+}
+/* End Testimonials & Our Ambassadors */
+/* Product Info Landing Page */
+.section-product-info-page {
+	.section-header {		
+		@media (min-width: 768px) {
+			margin-bottom: 120px;
+		}
+	}
+	.product-info-list {
+		gap: 9px;
+		grid-template-columns: repeat(1, 1fr);	
+		padding-bottom: 8px;
+		@media (min-width: 768px) {
+			padding-bottom: 120px;
+			gap: 30px;	
+			grid-template-columns: repeat(3, 1fr);						
+		}
+		@media (min-width: 992px) {
+			grid-template-columns: repeat(4, 1fr);						
+		}
+		.product-info-item {
+			&:first-child {				
+				@media (min-width: 768px) {
+					grid-column-start: 1;
+					grid-column-end: 3;
+					grid-row-start: 1;
+					grid-row-end: 3;	
+				}
+			}			
+			.image {
+				margin-bottom: 9px;
+			}	
+			.title {
+				color: var(--body-color);
+				font-weight: 700;
+				font-size: var(--heading-size-h4);
+				@media (hover : hover) {
+					&:hover {
+						color: var(--body-link);
+					}
+				}
+			}
+		}
+	}
+}
+/* End Product Info Landing Page */
+/* Trumarine Collagen */
+.section-product-detail {
+	.block-item {
+		&.block-paragraph {
+			.content-box {
+				.image {
+					max-width: 128px;
+					margin: 0 auto 18px;
+				}
+				.paragraph {
+					max-width: 860px;
+					margin: 0 auto;
+				}
+			}
+		}
 	}
 	.block-wrapper {
-		.content {
-			p {
-				margin: 5px 0 20px;
+		.paragraph-image-item {
+			align-items: center;
+			> div {
+				padding: 0;
+			}
+			.paragraph {
+				padding: 30px 24px 25px;
+				@media (min-width: 768px) {
+					padding: 30px;					
+				}
+				@media (min-width: 992px) {
+					padding-left: 6%;
+					padding-right: 6%;
+				}
+				> * {
+					max-width: 450px;
+				}
+			}
+		}
+		.reverse-order {
+			@media (min-width: 768px) {
+				.image {
+					order: 2;
+				}
+				.paragraph {
+					order: 1;
+				}
 			}
 		}
 	}
-	.block-single-paragraph {
-		.image {
-			width: 140px;
-			margin: auto;
-		}
-		h2 {
-			margin: 26px 0 0;
-		}
-		.block-wrapper {
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-	}
-	.block-multiple-paragraph {
-		h3 {
-			margin-bottom: 12px;
-		}
-		.content {
-			font-size: 18px;
-			line-height: 30px;
-			li {
-				list-style: unset;
-			}
-		}
-	}
-	@media (min-width: 992px) {
-		.section-header {
-			min-height: 680px;
-		}
-		.page-title {
-			font-size: 48px;
-			line-height: 60px;
-			padding-top: 120px;
-		}
-	} 
 }
-/* end section-page-community */
+/* End Trumarine Collagen */
 
 
 /* section-page-storyy */
