@@ -1,17 +1,5 @@
-.collection-template {		
-	.collection-template_header {
-		height: 275px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0 15px;
-		background-size: cover;
-		@media (min-width: 768px) {
-			height: 500px;
-		}
-	}	
-}
 .collection-title {
+	padding: 25px 15px;
 	h1 {
 		color: var(--main-color);
 		@media (max-width: 767px) {
@@ -24,16 +12,50 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	padding: 25px 0;
+	padding: 25px 0;	
 	@media (min-width: 768px) {
-		padding: 54px 0 80px;
+		padding: 54px 0 80px;	
 	}
 	> div {
-		align-items: center;
-		margin-bottom: 10px;
-		@media (min-width: 768px) {
-			margin-bottom: 20px;
-		}
+		align-items: center;		
+	}
+	.item-filter-buttons,
+	.filter-container {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -23px;	
+		.filter-button,
+		.filter-item {
+			padding: 0 23px;			
+		}	
+	}
+	.filter-button,
+	.filter-item {
+		position: relative;
+		.filter-select,
+		.btn {
+			background: #fff;
+			border: 2px solid var(--body-link);
+			padding: 8px 28px;	
+			min-width: 180px;
+			color: var(--body-link);
+			height: 48px;
+			text-align: center;
+			margin: 0;
+			@include font-14;
+			@include letter-spacing;
+			&:hover {
+				@media (hover : hover) {
+					background: var(--body-link);
+					color: var(--text-miscellaneous);
+				}
+			}
+			&.active {
+				background: var(--body-link);
+				color: var(--text-miscellaneous);
+				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+			}
+		}		
 	}
 	.sort-by {
 		position: relative;
@@ -46,7 +68,11 @@
 		}
 	}
 }
-.section-paragraphs-icons {
+.section-paragraphs-icons {	
+	margin-bottom: 45px;
+	@media (min-width: 768px) {
+		margin-bottom: 116px;
+	}
 	.image  {		
 		@media (max-width: 991px) {
 			margin-bottom: 45px;
@@ -64,6 +90,12 @@
 			margin-right: auto;
 		}
 	}	
+}
+#col-main {
+	margin-bottom: 70px;
+	@media (min-width: 768px) {
+		margin-bottom: 108px;  
+	}
 }
 #collection-container {	
 	grid-gap: 27px 13px;
@@ -216,7 +248,7 @@
 		}
 	}
 }
-.filter-container {
+.filter-container {	
 	.filter-options {
 		display: none;
 		@include ab(n,0,n,n);

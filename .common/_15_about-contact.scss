@@ -2,8 +2,10 @@
 .page-contact,
 .section-testimonial-page,
 .section-ambassadors-page,
-.section-product-info-page {
+.section-product-info-page,
+.section-product-detail {
 	background: #e5e5e5;	
+	overflow: hidden;
 	.image__style {
 		img {
 			object-fit: cover;
@@ -16,7 +18,10 @@
 			padding: 28px 15px 45px;
 			font-weight: 600; 
 			h1 {
-				font-weight: inherit;				
+				font-weight: inherit;	
+				@media (max-width: 767px){
+					font-size: inherit;
+				}
 			}			
 			@media (max-width: 767px) {
 				font-size: var(--heading-size-h2);
@@ -33,6 +38,25 @@
 			font-weight: 700;
 			@media (max-width: 767px) {
 				font-size: var(--heading-size-h5);
+			}
+		}
+		+ .container {
+			@media (max-width: 767px) {
+				padding: 0;
+				.section-body {
+					> div {
+						margin-left: 0;
+						margin-right: 0;
+						> section {
+							padding: 0;							
+						}
+						.ambassador-item_content,
+						.testimonial-item_content {
+							padding-left: 24px;
+							padding-right: 24px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -179,31 +203,31 @@
 	}
 }
 .testimonial-list,
-.ambassador-list {
+.ambassador-list,
+.block-ingredients {
 	.testimonial-item,
-	.ambassador-item {
+	.ambassador-item,
+	.ingredient-item {
 		margin-bottom: 45px;
 		.testimonial-item_image,
-		.ambassador-item_image {
+		.ambassador-item_image,
+		.image {
 			margin-bottom: 30px;
 			@media (min-width: 768px) {
 				margin-bottom: 28px;
 			}
 		}
-		.testimonial-item_content,
-		.ambassador-item_content {
-			.title {
-				font-size: var(--heading-size-h4);
-				margin-bottom: 10px;
-				font-weight: 700;
-				@media (min-width: 768px) {
-					font-size: var(--heading-size-h2);
-				}
+		.title {
+			font-size: var(--heading-size-h4);
+			margin-bottom: 10px;
+			font-weight: 700;
+			@media (min-width: 768px) {
+				font-size: var(--heading-size-h2);
 			}
-			.content {
-				p {
-					margin: 0;
-				}
+		}
+		.content, .subtext {
+			p {
+				margin: 0;
 			}
 		}
 	}	
@@ -226,13 +250,11 @@
 			margin-bottom: 120px;
 		}
 	}
-	.product-info-list {
-		gap: 9px;
-		grid-template-columns: repeat(1, 1fr);	
-		padding-bottom: 8px;
+	.product-info-list {		
+		grid-template-columns: repeat(1, 1fr);				
 		@media (min-width: 768px) {
 			padding-bottom: 120px;
-			gap: 30px;	
+			gap: 20px 30px;	
 			grid-template-columns: repeat(3, 1fr);						
 		}
 		@media (min-width: 992px) {
@@ -246,14 +268,19 @@
 					grid-row-start: 1;
 					grid-row-end: 3;	
 				}
-			}			
-			.image {
-				margin-bottom: 9px;
 			}	
+			@media (min-width: 992px) {
+				&:nth-child(4),
+				&:nth-child(5) {
+					margin-top: -20px;
+				}
+			}
 			.title {
 				color: var(--body-color);
 				font-weight: 700;
 				font-size: var(--heading-size-h4);
+				background: #fff;
+				padding: 11px;				
 				@media (hover : hover) {
 					&:hover {
 						color: var(--body-link);
@@ -266,8 +293,19 @@
 /* End Product Info Landing Page */
 /* Trumarine Collagen */
 .section-product-detail {
+	.section-header {
+		@media (min-width: 768px) {
+			margin-bottom: 65px;
+		}
+	}
 	.block-item {
-		&.block-paragraph {
+		p {
+			margin: 0;
+		}
+		&.block-paragraph {						
+			.heading {
+				margin-bottom: 3px;
+			}
 			.content-box {
 				.image {
 					max-width: 128px;
@@ -280,14 +318,34 @@
 			}
 		}
 	}
+	.block-paragraph-image,
+	.block-ingredients {
+		.container {
+			@media (max-width: 767px) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}	
+	.ingredient-item {
+		@media (max-width: 767px) {
+			padding-left: 0;
+			padding-right: 0;
+			.title, .subtext {
+				padding-left: 24px;
+				padding-right: 24px;
+			}
+		}
+	}
 	.block-wrapper {
 		.paragraph-image-item {
 			align-items: center;
+			flex-wrap: wrap;
 			> div {
 				padding: 0;
 			}
 			.paragraph {
-				padding: 30px 24px 25px;
+				padding: 30px 24px 55px;
 				@media (min-width: 768px) {
 					padding: 30px;					
 				}
@@ -297,6 +355,22 @@
 				}
 				> * {
 					max-width: 450px;
+				}
+				.heading {
+					margin-bottom: 4px;
+					@media (min-width: 768px) {
+						margin-bottom: 14px;
+					}
+				}
+				.subtext {
+					margin-bottom: 10px;
+					@media (min-width: 768px) {
+						margin-bottom: 30px;
+					}					
+				}
+				.btn {
+					padding: 9px 15px;					
+					@include font-14;
 				}
 			}
 		}
@@ -309,6 +383,76 @@
 					order: 1;
 				}
 			}
+		}
+	}	
+	.block-ingredients {
+		.block-body {
+			flex-wrap: wrap;
+		}
+		.block-header {
+			h2 {
+				color: var(--main-color);
+				margin-bottom: 13px;
+				@media (max-width: 767px) {
+					font-size: var(--heading-size-h4);
+				}
+				@media (min-width: 768px) {
+					margin-bottom: 44px;
+				}
+			}
+		}	
+	}
+	.block-single-image {
+		.section-header {
+			margin-bottom: 0;
+		}
+		.block-body {
+			.image {
+				max-width: 750px;
+				padding: 0 15px;
+				margin: 0 auto 33px;
+			}
+		}
+		.btn {
+			padding: 9px 15px;					
+			@include font-14;
+		}
+
+	}
+	.block-banner {
+		.container {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			@media (max-width: 767px) {
+				text-align: center;
+			}
+
+		}
+		.title {
+			color: var(--main-color);
+			margin-bottom: 2px;
+			@media (max-width: 767px) {
+				font-size: 27px;
+				margin-bottom: 8px;
+			}
+		}
+		.subtitle {
+			font-size: var(--heading-size-h5);
+			margin-bottom: 31px;
+			@media (min-width: 786px) {
+				font-size: var(--heading-size-h3);
+			}
+		}
+		.btn {
+			padding-top: 14px;
+			padding-bottom: 14px;
+			min-width: 300px;
+		}
+	}
+	.block-featured-products {
+		.section-header {
+			margin-bottom: 18px;
 		}
 	}
 }

@@ -2042,7 +2042,8 @@ input::-webkit-inner-spin-button {
 }
 /* end instagram */
 main#main-content .shopify-policy__container {padding-top:3%;}
-.section-featured-collection {
+.section-featured-collection,
+.block-featured-products {
   .tns-horizontal {    
     &.tns-no-subpixel {      
       > .tns-item {
