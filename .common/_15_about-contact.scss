@@ -3,7 +3,8 @@
 .section-testimonial-page,
 .section-ambassadors-page,
 .section-product-info-page,
-.section-product-detail {
+.section-product-detail,
+.section-subscribe-page {
 	background: #e5e5e5;	
 	overflow: hidden;
 	.image__style {
@@ -457,6 +458,165 @@
 	}
 }
 /* End Trumarine Collagen */
+/* Subscribe save */
+.section-subscribe-page {
+	.section-wrapper {
+		> .section-header {
+			@media (min-width: 768px) {
+				margin-bottom: 95px;
+			}
+		}
+	}
+	.block-iconbox-list {
+		.section-heading {
+			margin-bottom: 17px;
+			@media (min-width: 768px) {
+				margin-bottom: 89px;
+			}
+		}
+		.heading {
+			@media (max-width: 767px) {
+				font-size: var(--heading-size-h4);
+			}
+		}
+		.iconbox-item {
+			margin-bottom: 25px;
+			p {
+				margin: 0;
+			}
+			.icon {
+				margin-bottom: 10px;
+				text-align: center;
+				@media (min-width: 768px) {
+					margin-bottom: 33px;
+				}
+				svg {
+					display: flex;
+					justify-content: center;
+					margin: 0 auto;					
+				}
+			}
+			.title {			
+				@media (max-width: 767px) {
+					font-size: calc(var(--heading-size-h4) - 2px);
+				}				
+			}			
+		}
+	}
+	.block-paragraph-image {
+		.container {
+			@media (max-width: 767px) {
+				padding: 0;
+				.row {
+					margin: 0;
+					.paragraph {
+						padding: 0 34px 46px;
+					}
+					.image {
+						padding: 0;
+					}
+				}
+			}
+		}
+		.title {
+			color: var(--main-color);
+			margin-bottom: 15px;
+			@media (max-width: 767px) {
+				font-size: var(--heading-size-h4);				
+			}	
+			@media (min-width: 768px) {
+				margin-bottom: 21px;
+			}
+		}
+		.paragraph-wrapper {
+			.content {
+				ol {
+					@include font-16;
+					@media (min-width: 768px) {
+						font-size: var(--heading-size-h4);
+					}		
+					li {
+						padding: 8px 0;
+						@media (min-width: 992px) {
+							padding: 11px 0;
+						}						
+					}			
+				}
+			}
+			.btn {
+				@include font-14;
+				padding-top: 9px;
+				padding-bottom: 9px;
+				margin-top: 15px;
+				@media (min-width: 768px) {
+					margin-top: 25px;
+				}
+			}
+		}
+	}
+	.block-FAQs {
+		.section-header .section-heading {
+			@media (min-width: 768px) {
+				margin-bottom: 55px;
+			}
+		}
+		.FAQs {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -15px;
+			.FAQ-item {
+				flex: 0 0 100%;
+				max-width: 100%;
+				padding: 0 15px;
+				margin-bottom: 12px;
+				font-size: var(--body-font-size);		
+				.question-content {
+					padding-right: 10px;
+				}		
+				@media (min-width: 992px) {
+					flex: 0 0 50%;
+					max-width: 50%;
+					margin-bottom: 14px;
+				}
+				.question {
+					border: 2px solid var(--main-color);
+					padding: 14px 21px 14px 15px;
+					line-height: 1.4;
+					cursor: pointer;
+					@media (min-width: 768px) {
+						padding: 12px 17px 12px 28px;
+					}
+					svg {
+						flex: 0 0 21px;
+						margin-top: 2px;
+					}
+					&.active {
+						border-bottom: none;
+					}
+				}
+				.answer {
+					.answer-wrapper {
+						padding: 5px 21px 20px 15px;						
+						border: 2px solid var(--main-color);
+						border-top: none;
+						@media (min-width: 768px) {
+							padding: 5px 45px 20px 28px;
+						}
+						p {
+							margin: 0;
+						}
+					}
+					&.active {
+						height: 100%;
+						visibility: visible;
+					}
+				}				
+			}
+		}
+	}
+}
+/* End Subscribe save */
+
 
 
 /* section-page-storyy */

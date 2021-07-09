@@ -477,7 +477,8 @@ textarea {
 
 img {
   max-width: 100%;
-
+  vertical-align: middle;
+  border-style: none;
   &.img-lazy {
     position: absolute;
     left: 0;
@@ -2043,7 +2044,8 @@ input::-webkit-inner-spin-button {
 /* end instagram */
 main#main-content .shopify-policy__container {padding-top:3%;}
 .section-featured-collection,
-.block-featured-products {
+.block-featured-products,
+.block-featured-collection {
   .tns-horizontal {    
     &.tns-no-subpixel {      
       > .tns-item {

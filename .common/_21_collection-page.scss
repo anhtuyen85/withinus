@@ -1,5 +1,6 @@
 .collection-title {
-	padding: 25px 15px;
+	padding: 26px 15px;
+	border-top: 4px solid var(--body-link);
 	h1 {
 		color: var(--main-color);
 		@media (max-width: 767px) {
@@ -7,55 +8,168 @@
 		}
 	}
 }
-.collection-toolbar_wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	padding: 25px 0;	
+.filter-container {	
+	.filter-options {
+		display: none;
+		@include ab(n, 0, n, n);
+		z-index: 2;
+		background: var(--text-miscellaneous);
+		width: 100%;
+		border: 1px solid var(--body-link);
+		border-top: 0;		
+		overflow-y: auto;
+		max-height: 330px;
+	}
+	.filter-options::-webkit-scrollbar-track {
+		@extend %webkit-scrollbar-track;
+	}
+	.filter-options::-webkit-scrollbar {
+		@extend %webkit-scrollbar;  
+	}
+	.filter-options::-webkit-scrollbar-thumb {
+		@extend %webkit-scrollbar-thumb;
+	}
+	.filter-item {
+		text-transform: uppercase;
+		>svg {
+			@include ab(50%, n, n, 17px);
+			transform: translateY(-50%);
+			path {
+				stroke: var(--body-link);
+			}
+		}
+	}
+	.filter-select {
+		height: 40px;
+		padding: 5px 15px;
+		line-height: 26px;
+		cursor: pointer;
+		background: var(--text-miscellaneous);
+		border: 1px solid var(--body-link);
+		@include letter-spacing;
+		&.active + .filter-options {
+			display: block;
+		}
+	}
+	.option {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px 12px 14px 18px;
+		color: var(--body-link);
+		@include font-14;
+		@include letter-spacing;
+		label {
+			margin-bottom: 0;
+			padding-right: 10px;
+		}
+		input {
+			width: 18px;
+			height: 18px;
+			padding: 0;
+			border: 1px solid var(--body-link);
+			border-radius: 3px;
+		}
+		input[type="checkbox"]:checked {			
+			&:before {
+				content: "";
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 8.125L0.75 4.405L1.9425 3.25L4.5 5.7625L10.0575 0.25L11.25 1.435L4.5 8.125Z' fill='%2344C3BF'/%3E%3C/svg%3E%0A");
+				width: 12px;
+				height: 9px;
+				margin: 3px 0 0 2px;
+				display: block;
+			}
+		}
+	}
+}
+.collection-toolbar_wrapper {	
+	padding: 2px 0 35px;	
 	@media (min-width: 768px) {
 		padding: 54px 0 80px;	
-	}
-	> div {
-		align-items: center;		
-	}
-	.item-filter-buttons,
-	.filter-container {
+	}	
+	.collection-toolbar_item {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -23px;	
+		justify-content: center;		
 		.filter-button,
-		.filter-item {
-			padding: 0 23px;			
+		.filter-item {			
+			margin-bottom: 12px;	
+			@media (min-width: 768px) {				
+				margin-bottom: 21px;	
+			}	
+			&:not(:last-child) {
+				margin-right: 12px;
+				@media (min-width: 768px) {
+					margin-right: 30px;
+				}
+				@media (min-width: 1200px) {
+					margin-right: 50px;
+				}
+			}
 		}	
 	}
 	.filter-button,
-	.filter-item {
+	.filter-item,
+	.item-filter-mobile {
 		position: relative;
 		.filter-select,
-		.btn {
-			background: #fff;
-			border: 2px solid var(--body-link);
-			padding: 8px 28px;	
-			min-width: 180px;
+		.btn,
+		.btn-show-filter {
+			background: #fff;			
+			padding: 8px 18px;	
+			min-width: 156px;
 			color: var(--body-link);
 			height: 48px;
 			text-align: center;
 			margin: 0;
-			@include font-14;
+			text-transform: uppercase;
+			font-size: 12px;
 			@include letter-spacing;
+			@media (min-width: 768px) {
+				min-width: 180px;
+				@include font-14;
+			}			
+		}	
+		.btn {
+			border: 2px solid var(--body-link);
 			&:hover {
 				@media (hover : hover) {
 					background: var(--body-link);
 					color: var(--text-miscellaneous);
+					svg path {
+						stroke: var(--text-miscellaneous);
+					}
 				}
 			}
 			&.active {
 				background: var(--body-link);
 				color: var(--text-miscellaneous);
 				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+				svg path {
+					stroke: var(--text-miscellaneous);
+				}
 			}
-		}		
+		}
+		.filter-select {		
+			border: 1px solid var(--body-link);
+			padding-right: 30px;		
+			line-height: 28px;				
+			@media (min-width: 768px) {
+				min-width: 220px;
+				text-align: left;
+			}
+		}
+		.btn-show-filter {
+			min-width: 188px;
+			border: 2px solid var(--body-link);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			span {
+				flex: 1;
+				text-align: center;
+			}
+		}
 	}
 	.sort-by {
 		position: relative;
@@ -144,12 +258,13 @@
 		position: fixed;
 		left: -100%;
 		top: 0;
-		background: #fef1e7;
+		background: #e5e5e5;
 		height: 100vh;
-		width: 100%;
+		width: 100vw;
+		max-width: 375px;
 		padding: 50px 16px;
 		z-index: layer(sidebarDrawer);
-		overflow-y: auto;
+		overflow-y: auto;		
 		@extend %transition;
 	}
 	&.is-open {
@@ -163,26 +278,36 @@
 		align-items: center;
 		justify-content: center;
 		padding-bottom: 30px;
-		a {
-			@include ab(6px,n,n,20px);
+		text-transform: uppercase;
+		font-size: var(--heading-size-h5);
+		font-weight: 700;
+		@include letter-spacing;
+		.title {
+			flex: 1;
+			text-align: center;
+		}
+		a {			
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
-			width: 20px;
-			height: 20px;
+			width: 30px;
+			height: 100%;			
+			margin-right: 17px;
 		}
 		svg {
-			width: 16px;
-			height: 16px;
+			width: 13px;
+			height: 13px;
 		}
 	}
 	.filter-item {
-		border-bottom: 1px solid var(--body-border-color);
-		>a {
+		border-bottom: 1px solid var(--body-color);
+		> a {
 			text-transform: uppercase;
 			line-height: 30px;
-			font-weight: 400;
-			padding: 12px 20px;
+			font-weight: 700;
+			padding: 10px 12px 10px 24px;
+			color: var(--body-color);
+			@include font-14;
 			@include letter-spacing;
 			svg {
 				transition: 0.2s all ease-in-out;
@@ -218,11 +343,13 @@
 			opacity: 1;
 		}
 	}
-	.options-list {
-		padding-left: 20px;
-		padding-bottom: 15px;
+	.options-list {		
+		padding: 0 0 10px 20px;		
 		li {
-			padding: 10px 20px;
+			padding: 7px 20px;
+			text-transform: uppercase;
+			@include letter-spacing;
+			@include font-14;
 		}
 		.option {
 			display: flex;
@@ -234,87 +361,13 @@
 				border: 0;
 			}
 			input:checked + label {
-				color: var(--main-color);
-				text-decoration: underline;
+				color: var(--body-link);				
 			}
 			label {
 				margin: 0;
 			}
 		}
-	}
-	@media (min-width: 575px) {
-		.drawer-content {
-			width: 450px;
-		}
-	}
-}
-.filter-container {	
-	.filter-options {
-		display: none;
-		@include ab(n,0,n,n);
-		z-index: 2;
-		background: var(--text-miscellaneous);
-		width: 100%;
-		border: 1px solid var(--body-border-color);
-		border-top: 0;
-		padding-top: 10px;
-		overflow-y: auto;
-		max-height: 330px;
-	}
-	.filter-options::-webkit-scrollbar-track {
-		@extend %webkit-scrollbar-track;
-	}
-	.filter-options::-webkit-scrollbar {
-		@extend %webkit-scrollbar;  
-	}
-	.filter-options::-webkit-scrollbar-thumb {
-		@extend %webkit-scrollbar-thumb;
-	}
-	.filter-item {
-		text-transform: uppercase;
-		>svg {
-			@include ab(0,n,n,15px);
-		}
-	}
-	.filter-select {
-		height: 40px;
-		padding: 5px 15px;
-		line-height: 26px;
-		cursor: pointer;
-		background: var(--text-miscellaneous);
-		border: 1px solid var(--body-border-color);
-		letter-spacing: 0.6px;
-		&.active + .filter-options {
-			display: block;
-		}
-	}
-	.option {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 6px 15px;
-		letter-spacing: 0.6px;
-		label {
-			margin-bottom: 0;
-			padding-right: 10px;
-		}
-		input {
-			width: 16px;
-			height: 16px;
-			padding: 0;
-		}
-		input[type="checkbox"]:checked {
-			border-color: #0075ff;
-			&:before {
-				content: "";
-				background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3Csvg fill='%230075ff' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cpath d='M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0 c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7 C514.5,101.703,514.499,85.494,504.502,75.496z'/%3E%3C/svg%3E%0A");
-				width: 12px;
-				height: 12px;
-				margin: 1px;
-				display: block;
-			}
-		}
-	}
+	}	
 }
 // custom wholesale
 #shopify-section-collection-wholesale {
