@@ -6,6 +6,7 @@
         margin-right: 18px;
       }
       a {
+        display: flex;
         &:hover {
           @media (hover : hover) {
             color: var(--body-link) !important;
@@ -37,7 +38,7 @@
   .header-nav_logo {    
     display: flex;
     justify-content: center;
-    margin: 0 30px;    
+    margin: 0 30px;       
   }
   .header-nav_left {
     >ul {
@@ -107,7 +108,10 @@
       }
     }
     &:not(:last-child) {
-      margin-right: 55px;
+      margin-right: 30px;
+      @media (min-width: 1200px) {
+        margin-right: 55px;
+      }      
     }
     &:hover {   
       >.dropdown-menu {
@@ -123,11 +127,17 @@
   .mega-menu-list {    
     padding: 0 15px;
     margin: 0 auto;
-    >.text-right {
-      font-size: 16px;
+    max-width: 1440px;
+    >.text-right {      
       padding: 15px 0 30px;
       a {
-        margin-right: 8px;
+        display: inline-block;
+        font-weight: 700;
+        background: #D0EEEE;        
+        padding: 5px 20px;
+        line-height: 30px;
+        @include font-14;
+        @include letter-spacing;
       }
     }
   }
@@ -160,9 +170,9 @@
     @include fixed(0,n,n,0);
     height: 100%;
     width: 100%;
-    max-width: 375px;
+    max-width: 610px;
     padding: 60px 40px;
-    background: #e5e5e5;
+    background: var(--body-bg-color);
     @include translateX(100%);
     visibility: hidden;
     opacity: 0;    
@@ -186,8 +196,7 @@
   .btn-close {
     width: 35px;
     height: 35px;
-    line-height: 40px;
-    text-align: right;
+    line-height: 40px;    
     svg {
       width: 14px;
       height: 14px;
@@ -216,8 +225,7 @@
       line-height: 50px;
     }
     input {
-      padding: 10px;
-      border-color: var(--body-border-color);
+      padding: 10px;      
       border-right: 0;
     }
     button {
@@ -342,16 +350,25 @@
 
 /* header-mobile */
 .header-mobile {
-  padding: 7px 0 10px;    
+  padding: 10px 0;  
+  .header-logo {
+    img {
+      @media (max-width: 991px) {
+        max-width: 146px !important;
+      }
+    }
+  }  
   .header-icons {
     display: flex;
     align-items: center;    
-    a {
-      padding: 0 9px; 
-      width: 40px;
+    a {            
       height: 40px;
       display: flex;
       align-items: center;
+      &.header-hamburger {
+        color: var(--body-link) !important;
+        min-width: 23PX;
+      }
     }
     .flags-currency {
       display: flex;
@@ -363,6 +380,16 @@
     .svg-user {
       width: 21px;
       height: 21px;
+    }
+    &.left {
+      a {
+        margin-right: 16px;
+      }
+    }
+    &.right {
+      a {
+        margin-left: 16px;
+      }
     }
   }
   .header-hamburger {
@@ -387,7 +414,7 @@
   .header-mobile__item {
     @include translateX(-100%);
     @extend %transition;
-    background: #e5e5e5;
+    background: var(--body-bg-color);
     @include fixed(63px,0,0,0);    
     width: 100%;
     z-index: layer(header-mobile__horizontal);
@@ -465,7 +492,7 @@
       padding: 30px 0;
       overflow-y: auto;
       z-index: layer(mobile-dropdown-submenu);
-      background: #e5e5e5;
+      background: var(--body-bg-color);
       will-change: transform;
       @extend %transition;
     }

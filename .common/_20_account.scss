@@ -1,5 +1,4 @@
-.page-account {
-	background: #E5E5E5;		
+.page-account {		
 	padding: 100px 0;
 	.form-group {
 		max-width: 520px;
@@ -98,7 +97,7 @@
 			content: "OR";			
 			font-weight: 700;			
 			padding: 0 10px;
-			background: #e5e5e5;
+			background: var(--body-bg-color);
 			z-index: 1;
 			transform: translate(-50%, -50%);
 			@include ab(50%, 50%, n, n);			
@@ -309,11 +308,6 @@
 		}
 	}
 }
-.template-customers-addresses {
-	#main-content {
-		background: #E5E5E5;
-	}
-}
 .th_subscription_cp_link {
 	display: block;
 	margin: 20px 0;
@@ -338,8 +332,7 @@
 	}
 }
 .template-customers-activate_account {
-	#main-content {
-		background: #E5E5E5;
+	#main-content {		
 		padding: 100px 0;
 	}
 	#template {

@@ -48,7 +48,10 @@
 				color: var(--body-second-color);
 				@include placeholder {
 					color: var(--body-second-color);
-				}				
+				}		
+				@media (max-width: 767px) {
+					text-align: center;
+				}		
 			}
 			.btn {
 				padding-top: 14px;

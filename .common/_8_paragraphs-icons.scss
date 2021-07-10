@@ -16,16 +16,15 @@
 		}
 		.paragraphs-icons_item {	
 			@media (max-width: 767px) {
-				flex-direction: column;
-				justify-content: center;
+				display: block !important;
 				text-align: center;
 			}
-			.icon {
-				flex: 0 0 73px;
+			.icon {				
 				max-width: 73px;				
-				margin-bottom: 17px;
+				margin: 0 auto 17px;
 				@media (min-width: 768px) {
 					margin: 0 32px 0 0;
+					flex: 0 0 73px;
 				}
 				svg {
 					display: flex;

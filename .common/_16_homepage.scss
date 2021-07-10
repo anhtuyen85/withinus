@@ -120,6 +120,9 @@
 				@include ab(n, 0, 0, 0);	
 				padding-top: 33px;
 			}
+			@media (max-width: 767px) {
+				background: none !important;
+			}
 			.title {
 				font-size: var(--heading-size-h4);
 				margin-bottom: 13px;

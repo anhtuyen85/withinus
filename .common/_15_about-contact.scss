@@ -5,7 +5,7 @@
 .section-product-info-page,
 .section-product-detail,
 .section-subscribe-page {
-	background: #e5e5e5;	
+	background: var(--body-bg-color);	
 	overflow: hidden;
 	.image__style {
 		img {
@@ -16,8 +16,8 @@
 		.title {
 			color: var(--main-color);
 			border-top: 4px solid var(--body-link);
-			padding: 28px 15px 45px;
-			font-weight: 600; 
+			padding: 28px 15px 44px;
+			font-weight: 700; 
 			h1 {
 				font-weight: inherit;	
 				@media (max-width: 767px){
@@ -30,7 +30,7 @@
 			}
 			@media (min-width: 768px) {
 				border: none;
-				padding-bottom: 96px;
+				min-height: 174px;				
 				@include ab(n, 0, 0, 0);
 			}
 		}
@@ -74,6 +74,13 @@
 			font-size: var(--heading-size-h3);
 			@media (min-width: 768px) {
 				font-size: var(--heading-size-h2);
+			}
+		}
+	}	
+	.contact-form_heading {
+		.title {
+			@media (max-width: 767px) {
+				text-align: center;
 			}
 		}
 	}	
@@ -130,7 +137,15 @@
 		}
 	}
 	.form-group {
-		margin-bottom: 20px;
+		margin-bottom: 11px;
+		@media (min-width: 768px) {
+			margin-bottom: 20px;
+		}
+		input, textarea {
+			@media (max-width: 767px) {
+				text-align: center;
+			}
+		}
 	}
 	.form-actions {
 		.btn {
@@ -145,6 +160,7 @@
 			text-align: center;
 			color: var(--main-color);
 			font-weight: 400;
+			margin: 18px 0 0;
 		}
 	}		
 }
@@ -204,18 +220,15 @@
 	}
 }
 .testimonial-list,
-.ambassador-list,
-.block-ingredients {
+.ambassador-list {
 	.testimonial-item,
-	.ambassador-item,
-	.ingredient-item {
+	.ambassador-item {
 		margin-bottom: 45px;
 		.testimonial-item_image,
-		.ambassador-item_image,
-		.image {
+		.ambassador-item_image {
 			margin-bottom: 30px;
 			@media (min-width: 768px) {
-				margin-bottom: 28px;
+				margin-bottom: 25px;
 			}
 		}
 		.title {
@@ -226,15 +239,12 @@
 				font-size: var(--heading-size-h2);
 			}
 		}
-		.content, .subtext {
+		.content {
 			p {
 				margin: 0;
 			}
 		}
 	}	
-}
-.section-instagram-custom {
-	background: #e5e5e5;
 }
 .section-ambassadors-page {
 	.section-header {
@@ -248,13 +258,13 @@
 .section-product-info-page {
 	.section-header {		
 		@media (min-width: 768px) {
-			margin-bottom: 120px;
+			margin-bottom: 100px;
 		}
 	}
 	.product-info-list {		
 		grid-template-columns: repeat(1, 1fr);				
 		@media (min-width: 768px) {
-			padding-bottom: 120px;
+			padding-bottom: 112px;
 			gap: 20px 30px;	
 			grid-template-columns: repeat(3, 1fr);						
 		}
@@ -296,7 +306,7 @@
 .section-product-detail {
 	.section-header {
 		@media (min-width: 768px) {
-			margin-bottom: 65px;
+			margin-bottom: 60px;
 		}
 	}
 	.block-item {
@@ -329,9 +339,30 @@
 		}
 	}	
 	.ingredient-item {
+		&:not(:last-child) {
+			margin-bottom: 29px;
+			@media (min-width: 768px) {
+				margin-bottom: 0;
+			}
+		}
+		.image {
+			margin-bottom: 23px;
+			@media (min-width: 768px) {
+				margin-bottom: 26px;
+			}
+		}
+		.title {		
+			margin-bottom: 4px;	
+			@media (min-width: 768px) {
+				margin-bottom: 14px;
+			}
+		}
 		@media (max-width: 767px) {
 			padding-left: 0;
 			padding-right: 0;
+			.title {
+				font-size: calc(var(--heading-size-h4) - 2px);
+			}
 			.title, .subtext {
 				padding-left: 24px;
 				padding-right: 24px;
@@ -393,7 +424,7 @@
 		.block-header {
 			h2 {
 				color: var(--main-color);
-				margin-bottom: 13px;
+				margin-bottom: 20px;
 				@media (max-width: 767px) {
 					font-size: var(--heading-size-h4);
 				}
@@ -403,9 +434,15 @@
 			}
 		}	
 	}
-	.block-single-image {
+	.block-single-image {		
 		.section-header {
 			margin-bottom: 0;
+			.section-heading {
+				padding-bottom: 15px;
+				@media (min-width: 768px) {
+					padding-bottom: 40px;
+				}
+			}
 		}
 		.block-body {
 			.image {
@@ -453,7 +490,15 @@
 	}
 	.block-featured-products {
 		.section-header {
-			margin-bottom: 18px;
+			margin-bottom: 7px;
+			@media (min-width: 768px) {
+				margin-bottom: 18px;
+			}
+		}
+		.container {
+			@media (max-width: 767px) {
+				padding-right: 0;
+			}
 		}
 	}
 }
@@ -463,15 +508,15 @@
 	.section-wrapper {
 		> .section-header {
 			@media (min-width: 768px) {
-				margin-bottom: 95px;
+				margin-bottom: 89px;
 			}
 		}
 	}
 	.block-iconbox-list {
 		.section-heading {
-			margin-bottom: 17px;
+			margin-bottom: 4px;
 			@media (min-width: 768px) {
-				margin-bottom: 89px;
+				margin-bottom: 59px;
 			}
 		}
 		.heading {
@@ -485,10 +530,12 @@
 				margin: 0;
 			}
 			.icon {
-				margin-bottom: 10px;
+				margin: 0 auto 15px;
 				text-align: center;
+				max-width: 75px;
 				@media (min-width: 768px) {
 					margin-bottom: 33px;
+					max-width: 100px;
 				}
 				svg {
 					display: flex;
@@ -496,7 +543,8 @@
 					margin: 0 auto;					
 				}
 			}
-			.title {			
+			.title {		
+				margin: 0 0 5px;	
 				@media (max-width: 767px) {
 					font-size: calc(var(--heading-size-h4) - 2px);
 				}				
@@ -559,63 +607,105 @@
 			@media (min-width: 768px) {
 				margin-bottom: 55px;
 			}
-		}
-		.FAQs {
-			display: flex;
-			flex-wrap: wrap;
-			margin: 0 -15px;
-			.FAQ-item {
-				flex: 0 0 100%;
-				max-width: 100%;
-				padding: 0 15px;
-				margin-bottom: 12px;
-				font-size: var(--body-font-size);		
-				.question-content {
-					padding-right: 10px;
-				}		
-				@media (min-width: 992px) {
-					flex: 0 0 50%;
-					max-width: 50%;
-					margin-bottom: 14px;
+		}		
+	}
+	.block-featured-collection {
+		.container {
+			@media (max-width: 767px) {
+				padding-right: 0;
+				.section-header .section-heading {
+					padding-right: 15px;
 				}
-				.question {
-					border: 2px solid var(--main-color);
-					padding: 14px 21px 14px 15px;
-					line-height: 1.4;
-					cursor: pointer;
-					@media (min-width: 768px) {
-						padding: 12px 17px 12px 28px;
-					}
-					svg {
-						flex: 0 0 21px;
-						margin-top: 2px;
-					}
-					&.active {
-						border-bottom: none;
-					}
-				}
-				.answer {
-					.answer-wrapper {
-						padding: 5px 21px 20px 15px;						
-						border: 2px solid var(--main-color);
-						border-top: none;
-						@media (min-width: 768px) {
-							padding: 5px 45px 20px 28px;
-						}
-						p {
-							margin: 0;
-						}
-					}
-					&.active {
-						height: 100%;
-						visibility: visible;
-					}
-				}				
 			}
 		}
 	}
 }
+.block-FAQs,
+.page-faqs {
+	.FAQs,
+	.page_content .faq-content {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+		.FAQ-item,
+		.panel-faq {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding: 0 15px;
+			margin-bottom: 12px;
+			font-size: var(--body-font-size);	
+			box-shadow: none;	
+			margin-right: 0;
+			.question-content {
+				padding-right: 10px;
+			}		
+			@media (min-width: 992px) {
+				flex: 0 0 50%;
+				max-width: 50%;
+				margin-bottom: 14px;
+			}
+			.question,
+			.panel-question {
+				border: 2px solid var(--main-color);
+				padding: 14px 21px 14px 15px;
+				line-height: 1.4;
+				cursor: pointer;
+				background: #fff;
+				@media (min-width: 768px) {
+					padding: 12px 17px 12px 28px;
+				}
+				svg {
+					flex: 0 0 21px;
+					margin-top: 2px;
+				}
+				&.active {
+					border-bottom: none;
+				}
+			}
+			.answer,
+			.panel-answer {
+				.answer-wrapper,
+				.content {
+					background: #fff;
+					padding: 5px 21px 20px 15px;						
+					border: 2px solid var(--main-color);
+					border-top: none;
+					@media (min-width: 768px) {
+						padding: 5px 45px 20px 28px;
+					}
+					p {
+						margin: 0;
+					}
+				}
+				&.active {
+					height: 100%;
+					visibility: visible;
+				}
+			}				
+		}
+	}
+}
 /* End Subscribe save */
+/* FAQs */
+.page-faqs {
+	.panel-faq {
+		.panel-answer {
+			height: 0px;
+			overflow: hidden;
+			transition: height .2s ease-in-out;		
+		}
+		&.active {
+			.panel-answer {
+				height: 100%;
+				visibility: visible;
+			}
+			.panel-question {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+/* End FAQs */
 
 
 
@@ -901,7 +991,7 @@
 	.message-succee {
 		color: #ff0000;
 		font-size: 16px;
-		font-weight: 600;
+		font-weight: 700;
 		margin-bottom: 30px;
 	}
 	.section-wrapper {
