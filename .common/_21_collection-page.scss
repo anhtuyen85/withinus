@@ -182,29 +182,6 @@
 		}
 	}
 }
-.section-paragraphs-icons {	
-	margin-bottom: 45px;
-	@media (min-width: 768px) {
-		margin-bottom: 116px;
-	}
-	.image  {		
-		@media (max-width: 991px) {
-			margin-bottom: 45px;
-		}
-		@media (min-width: 992px) {
-			padding-right: 15px;			
-		}
-	}
-	.paragraphs-icons_list {
-		padding: 0 15px;
-		max-width: 705px;		
-		> * {
-			max-width: 630px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}	
-}
 #col-main {
 	margin-bottom: 70px;
 	@media (min-width: 768px) {

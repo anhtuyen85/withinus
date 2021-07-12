@@ -1268,6 +1268,9 @@ input::-webkit-inner-spin-button {
       color: var(--text-miscellaneous);
       width: 11px;
       height: 11px;
+      path {
+        fill: currentColor;
+      }
     }
   }
   .modal_overlay {
@@ -2054,14 +2057,16 @@ main#main-content .shopify-policy__container {padding-top:3%;}
 .stamped-badge-caption {
   display: none;
 }
-.fa-star, .fa-star-checked, .fa-star-half-o, .fa-star-o, .stamped-fa-star, .stamped-fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star-o {
-  color: var(--rating-star-color);
-  //  color: var(--rating-star-empty-color);
+.fa-star, .fa-star-checked, .fa-star-half-o, .fa-star-o, .stamped-fa-star, .stamped-fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star-o {  
+  color: var(--rating-star-empty-color) !important;
   &:before {    
     @media (min-width: 576px) {
       font-size: 22px;
     }
   }
+}
+.fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star, .stamped-fa-star-checked {
+  color: var(--rating-star-color) !important;
 }
 .postion-relative {
   position: relative;

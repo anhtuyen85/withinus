@@ -1,67 +1,4 @@
 /* Contact page */
-.page-contact,
-.section-testimonial-page,
-.section-ambassadors-page,
-.section-product-info-page,
-.section-product-detail,
-.section-subscribe-page {
-	background: var(--body-bg-color);	
-	overflow: hidden;
-	.image__style {
-		img {
-			object-fit: cover;
-		}
-	}
-	.section-header {
-		.title {
-			color: var(--main-color);
-			border-top: 4px solid var(--body-link);
-			padding: 28px 15px 44px;
-			font-weight: 700; 
-			h1 {
-				font-weight: inherit;	
-				@media (max-width: 767px){
-					font-size: inherit;
-				}
-			}			
-			@media (max-width: 767px) {
-				font-size: var(--heading-size-h2);
-				background-color: transparent !important;
-			}
-			@media (min-width: 768px) {
-				border: none;
-				min-height: 174px;				
-				@include ab(n, 0, 0, 0);
-			}
-		}
-		.subheading {
-			margin-top: 13px;
-			font-weight: 700;
-			@media (max-width: 767px) {
-				font-size: var(--heading-size-h5);
-			}
-		}
-		+ .container {
-			@media (max-width: 767px) {
-				padding: 0;
-				.section-body {
-					> div {
-						margin-left: 0;
-						margin-right: 0;
-						> section {
-							padding: 0;							
-						}
-						.ambassador-item_content,
-						.testimonial-item_content {
-							padding-left: 24px;
-							padding-right: 24px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
 .page-contact {	
 	.section-body {
 		padding: 0 0 40px;
@@ -172,7 +109,8 @@
 		padding-bottom: 200px;
 	}
 }
-.section-testimonial-page {
+.section-testimonial-page,
+.section-faqs-page {
 	.tag-list {				
 		@media (min-width: 768px) {
 			display: flex !important; 			
@@ -303,12 +241,21 @@
 }
 /* End Product Info Landing Page */
 /* Trumarine Collagen */
-.section-product-detail {
-	.section-header {
-		@media (min-width: 768px) {
-			margin-bottom: 60px;
-		}
+.block-item.block-paragraph .content-box {
+	.image {
+		max-width: 128px;
+		margin: 0 auto 18px;
+	}	
+}
+.block-item.block-iconbox-list .section-header,
+.block-item.block-paragraph .content-box {	
+	p {
+		max-width: 860px;
+		margin: 0 auto;
+		text-align: center;
 	}
+}
+.section-product-detail {	
 	.block-item {
 		p {
 			margin: 0;
@@ -317,27 +264,8 @@
 			.heading {
 				margin-bottom: 3px;
 			}
-			.content-box {
-				.image {
-					max-width: 128px;
-					margin: 0 auto 18px;
-				}
-				.paragraph {
-					max-width: 860px;
-					margin: 0 auto;
-				}
-			}
 		}
-	}
-	.block-paragraph-image,
-	.block-ingredients {
-		.container {
-			@media (max-width: 767px) {
-				padding-left: 0;
-				padding-right: 0;
-			}
-		}
-	}	
+	}		
 	.ingredient-item {
 		&:not(:last-child) {
 			margin-bottom: 29px;
@@ -368,55 +296,7 @@
 				padding-right: 24px;
 			}
 		}
-	}
-	.block-wrapper {
-		.paragraph-image-item {
-			align-items: center;
-			flex-wrap: wrap;
-			> div {
-				padding: 0;
-			}
-			.paragraph {
-				padding: 30px 24px 55px;
-				@media (min-width: 768px) {
-					padding: 30px;					
-				}
-				@media (min-width: 992px) {
-					padding-left: 6%;
-					padding-right: 6%;
-				}
-				> * {
-					max-width: 450px;
-				}
-				.heading {
-					margin-bottom: 4px;
-					@media (min-width: 768px) {
-						margin-bottom: 14px;
-					}
-				}
-				.subtext {
-					margin-bottom: 10px;
-					@media (min-width: 768px) {
-						margin-bottom: 30px;
-					}					
-				}
-				.btn {
-					padding: 9px 15px;					
-					@include font-14;
-				}
-			}
-		}
-		.reverse-order {
-			@media (min-width: 768px) {
-				.image {
-					order: 2;
-				}
-				.paragraph {
-					order: 1;
-				}
-			}
-		}
-	}	
+	}		
 	.block-ingredients {
 		.block-body {
 			flex-wrap: wrap;
@@ -456,38 +336,7 @@
 			@include font-14;
 		}
 
-	}
-	.block-banner {
-		.container {
-			display: flex;
-			height: 100%;
-			align-items: center;
-			@media (max-width: 767px) {
-				text-align: center;
-			}
-
-		}
-		.title {
-			color: var(--main-color);
-			margin-bottom: 2px;
-			@media (max-width: 767px) {
-				font-size: 27px;
-				margin-bottom: 8px;
-			}
-		}
-		.subtitle {
-			font-size: var(--heading-size-h5);
-			margin-bottom: 31px;
-			@media (min-width: 786px) {
-				font-size: var(--heading-size-h3);
-			}
-		}
-		.btn {
-			padding-top: 14px;
-			padding-bottom: 14px;
-			min-width: 300px;
-		}
-	}
+	}	
 	.block-featured-products {
 		.section-header {
 			margin-bottom: 7px;
@@ -502,6 +351,146 @@
 		}
 	}
 }
+.block-banner {
+	.container {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		@media (max-width: 767px) {
+			text-align: center;
+		}
+
+	}
+	.title {
+		color: var(--main-color);
+		margin-bottom: 2px;
+		@media (max-width: 767px) {
+			font-size: 27px;
+			margin-bottom: 8px;
+		}
+	}
+	.subtitle {
+		font-size: var(--heading-size-h5);
+		margin-bottom: 31px;
+		@media (min-width: 786px) {
+			font-size: var(--heading-size-h3);
+		}
+	}
+	.btn {
+		padding-top: 14px;
+		padding-bottom: 14px;
+		min-width: 300px;
+	}
+}
+.block-wrapper {
+	.paragraph-image-item {		
+		flex-wrap: wrap;
+		@media (min-width: 1200px) {
+			align-items: center;
+		}
+		.image {
+			@media (min-width: 768px) and (max-width: 1199px) {
+				position: relative;				
+				.image__style {
+					padding-top: 0% !important;
+					position: static !important;
+					img {
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		> div {
+			padding: 0;
+		}
+		.paragraph {
+			padding: 30px 24px 55px;
+			@media (min-width: 768px) {
+				padding: 30px;					
+			}
+			@media (min-width: 992px) {
+				padding-left: 6%;
+				padding-right: 6%;
+			}
+			> * {
+				max-width: 450px;
+			}
+			.heading {
+				margin-bottom: 4px;
+				@media (min-width: 768px) {
+					margin-bottom: 14px;
+				}
+			}
+			.subtext {
+				margin-bottom: 10px;
+				@media (min-width: 768px) {
+					margin-bottom: 30px;
+				}					
+			}
+			.btn {
+				padding: 9px 15px;					
+				@include font-14;
+			}
+		}
+	}
+	.reverse-order {
+		@media (min-width: 768px) {
+			.image {
+				order: 2;
+			}
+			.paragraph {
+				order: 1;
+			}
+		}
+	}
+}
+.block-video {
+	.block-wrapper {
+		text-align: center;
+		.block-body {			
+			width: 100%;
+			max-width: 870px;
+			margin: 0 auto;
+			.video-content {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				padding-top: 66.78%;				
+				video {
+					width: 100%;
+					height: 100%;
+					max-width: 100%;
+					max-height: 100%;
+					@include ab(0, 0, n, n);
+				}
+			}
+			.video-button {
+				margin: 30px auto 0;
+				text-align: center;
+				@media (min-width: 768px) {
+					margin-top: 65px;
+				}
+				.btn {
+					@include font-14;
+					width: 180px;
+					height: 48px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
+.block-paragraph-image,
+	.block-ingredients {
+		.container {
+			@media (max-width: 767px) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
 /* End Trumarine Collagen */
 /* Subscribe save */
 .section-subscribe-page {
@@ -511,46 +500,7 @@
 				margin-bottom: 89px;
 			}
 		}
-	}
-	.block-iconbox-list {
-		.section-heading {
-			margin-bottom: 4px;
-			@media (min-width: 768px) {
-				margin-bottom: 59px;
-			}
-		}
-		.heading {
-			@media (max-width: 767px) {
-				font-size: var(--heading-size-h4);
-			}
-		}
-		.iconbox-item {
-			margin-bottom: 25px;
-			p {
-				margin: 0;
-			}
-			.icon {
-				margin: 0 auto 15px;
-				text-align: center;
-				max-width: 75px;
-				@media (min-width: 768px) {
-					margin-bottom: 33px;
-					max-width: 100px;
-				}
-				svg {
-					display: flex;
-					justify-content: center;
-					margin: 0 auto;					
-				}
-			}
-			.title {		
-				margin: 0 0 5px;	
-				@media (max-width: 767px) {
-					font-size: calc(var(--heading-size-h4) - 2px);
-				}				
-			}			
-		}
-	}
+	}	
 	.block-paragraph-image {
 		.container {
 			@media (max-width: 767px) {
@@ -577,6 +527,9 @@
 			}
 		}
 		.paragraph-wrapper {
+			@media (min-width: 768px) {
+				padding-left: 26px;
+			}
 			.content {
 				ol {
 					@include font-16;
@@ -602,13 +555,6 @@
 			}
 		}
 	}
-	.block-FAQs {
-		.section-header .section-heading {
-			@media (min-width: 768px) {
-				margin-bottom: 55px;
-			}
-		}		
-	}
 	.block-featured-collection {
 		.container {
 			@media (max-width: 767px) {
@@ -620,361 +566,171 @@
 		}
 	}
 }
-.block-FAQs,
-.page-faqs {
-	.FAQs,
-	.page_content .faq-content {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -15px;
-		.FAQ-item,
-		.panel-faq {
-			flex: 0 0 100%;
-			max-width: 100%;
-			padding: 0 15px;
-			margin-bottom: 12px;
-			font-size: var(--body-font-size);	
-			box-shadow: none;	
-			margin-right: 0;
-			.question-content {
-				padding-right: 10px;
-			}		
-			@media (min-width: 992px) {
-				flex: 0 0 50%;
-				max-width: 50%;
-				margin-bottom: 14px;
-			}
-			.question,
-			.panel-question {
-				border: 2px solid var(--main-color);
-				padding: 14px 21px 14px 15px;
-				line-height: 1.4;
-				cursor: pointer;
-				background: #fff;
-				@media (min-width: 768px) {
-					padding: 12px 17px 12px 28px;
-				}
-				svg {
-					flex: 0 0 21px;
-					margin-top: 2px;
-				}
-				&.active {
-					border-bottom: none;
-				}
-			}
-			.answer,
-			.panel-answer {
-				.answer-wrapper,
-				.content {
-					background: #fff;
-					padding: 5px 21px 20px 15px;						
-					border: 2px solid var(--main-color);
-					border-top: none;
-					@media (min-width: 768px) {
-						padding: 5px 45px 20px 28px;
-					}
-					p {
-						margin: 0;
-					}
-				}
-				&.active {
-					height: 100%;
-					visibility: visible;
-				}
-			}				
+.block-iconbox-list {
+	.section-heading {
+		margin-bottom: 4px;
+		@media (min-width: 768px) {
+			margin-bottom: 59px;
 		}
+	}
+	.heading {
+		@media (max-width: 767px) {
+			font-size: var(--heading-size-h4);
+		}
+	}
+	.iconbox-item {
+		margin-bottom: 25px;
+		p {
+			margin: 0;
+		}
+		.icon {
+			margin: 0 auto 15px;
+			text-align: center;
+			max-width: 75px;
+			@media (min-width: 768px) {
+				margin-bottom: 33px;
+				max-width: 100px;
+			}
+			svg {
+				display: flex;
+				justify-content: center;
+				margin: 0 auto;					
+			}
+		}
+		.title {		
+			margin: 0 0 5px;	
+			@media (max-width: 767px) {
+				font-size: calc(var(--heading-size-h4) - 2px);
+			}				
+		}			
 	}
 }
 /* End Subscribe save */
 /* FAQs */
-.page-faqs {
-	.panel-faq {
-		.panel-answer {
-			height: 0px;
-			overflow: hidden;
-			transition: height .2s ease-in-out;		
+.section-faqs-subscription {
+	.section-header .section-heading {
+		@media (min-width: 768px) {
+			margin-bottom: 55px;
 		}
-		&.active {
-			.panel-answer {
-				height: 100%;
-				visibility: visible;
-			}
-			.panel-question {
-				margin-bottom: 0;
+	}		
+}
+.section-faqs {
+	.faq-content {
+		.grid-gap-30 {
+			row-gap: 12px;			
+			@media (min-width: 768px) {
+				row-gap: 14px;
 			}
 		}
 	}
+	.faq-item {		
+		&:not(:last-child) {
+			margin-bottom: 12px;
+			@media (min-width: 768px) {
+				margin-bottom: 14px;
+			}
+		}
+		.question {
+			border: 2px solid var(--main-color);
+			padding: 14px 21px 14px 15px;
+			line-height: 1.4;
+			cursor: pointer;
+			background: #fff;
+			display: flex;
+			justify-content: space-between;
+			@media (min-width: 768px) {
+				padding: 12px 17px 12px 28px;
+			}
+			.question-content {
+				padding-right: 10px;
+			}
+			svg {
+				flex: 0 0 21px;
+				margin-top: 2px;
+			}			
+		}	
+		.answer {
+			background: #fff;			
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+			transition: height .2s ease-in-out;				
+			p {
+				margin: 0;
+			}
+		}
+		&.active {		
+			.question {
+				border-bottom: none;
+			}
+			.answer {
+				height: auto;
+				visibility: visible;
+				padding: 5px 21px 20px 15px;						
+				border: 2px solid var(--main-color);
+				border-top: none;
+				@media (min-width: 768px) {
+					padding: 5px 45px 20px 28px;
+				}
+			}
+		}
+	}	
+	.section-heading_wrapper {
+		text-align: center;
+		@media (max-width: 767px) {
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		.heading {
+			margin-bottom: 18px;
+		}
+		.image {
+			margin: 0 auto;
+		}
+	}	
+}
+.section-faqs-page {
+	> .section-wrapper > .section-header {
+		@media (min-width: 768px) {
+			margin-bottom: 37px;
+		}
+	}	
 }
 /* End FAQs */
-
-
-
-/* section-page-storyy */
-.section-page-story {
-	.section-header {
-		min-height: 260px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: var(--text-miscellaneous);
-	}
-	.page-title {
-		font-size: 26px;
-		line-height: 40px;
-		font-weight: 700;
-	}
-	.block-wrapper {
-		.content {
-			p {
-				margin: 5px 0 20px;
-			}
+/* Careers */
+.section-careers-page {
+	> .section-wrapper > .section-header {
+		@media (min-width: 768px) {
+			margin-bottom: 56px;
 		}
 	}
-	.block-single-paragraph {
-		.image {
-			width: 140px;
-			margin: auto;
-		}
-		h2 {
-			margin: 10px 0;
-		}
-		.block-wrapper {
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-		.btn {
-			height: 68px;
-			width: 100%;
-			max-width: 300px;
-			margin: 0 auto;
-			font-size: 22px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-	}
-	.paragraph-image-item {
-		h3 {
-			margin-bottom: 12px;
-		}
-		.paragraph {
-			max-width: 480px;
-			padding: 0 15px;
-			margin: 30px auto 0;
-		}
-		.content {
-			font-size: 18px;
-			line-height: 30px;
-			li {
-				list-style: unset;
-			}
-		}
-	}
-	.block-featured-products {
-		.product-info {
-			padding: 0 15px;
-			max-width: 600px;
-			margin: 0 auto;
-		}
-		.product-item {
-			align-items: center;
-		}
-		.product-name {
-			font-size: 30px;
-			line-height: 30px;
-			font-weight: 700;
-		}
-		.product-price {
-			margin: 12px 0;
-		}
-		.product-swatch {
-			.swatch-group {
-				margin: 0 -7px;
-			}
-			.swatch-title {
-				padding: 0 10px 10px;
-			}
-			.input-group {
-				margin: 0 7px 0;
-				label {
-					padding: 16px 5px 17px;
-					border: 1px solid #D4909A;
-					text-transform: uppercase;
-					cursor: pointer;
-					position: relative;
-					@include letter-spacing;
-					max-width: 250px;
-					min-width: 170px;
-					width: 100%;
-					text-align: center;
-					overflow: hidden;
-				}
-				input:checked + label {
-					background: var(--main-color);
-					color: #fff;
-				}
-				input[disabled] + label {
-					color: #BABCBF;
-					border-color: #BABCBF;
-					pointer-events: none;
-					&:before {
-						content: "";
-						position: absolute;
-						left: 50%;
-						top: 50%;
-						width: calc(100% + 15px);
-						height: 1px;
-						background-color: #babcbf;
-						transform: translate(-50%, -50%) rotate(12.5deg);
-					}
-				}
-			}
-			.swatch-select {
-				display: flex;
-				flex-wrap: wrap;
-				input {
-					display: none;
-				}
-			}
-		}
-		.product-description {
-			font-size: 18px;
-			line-height: 30px;
-			p {
-				margin: 22px 0;
-			}
-			p:empty {
-				margin: 0;
-			}
-		}
-		.js-btn-redirect {
-			width: 100%;
-			padding: 13px 30px 15px;
-			font-size: 22px;
-			line-height: 30px;
-			@include letter-spacing;
-			text-transform: uppercase;
-			text-align: center;
-			margin-bottom: 47px;
-		}
-	}
-	.block-paragraphs-with-icons {
-		.icon-item {
-			padding-top: 20px;
-			padding-bottom: 20px;
-			.icon {
-				max-width: 150px;
-				height: 150px;
-				padding: 10px;
-				margin: 0 auto;
-				>svg {
-					height: 90px;
-				}
-			}
-			.title {
-				margin-top: 25px;
-			}
-		}
-		.block-body {
-			padding: 60px 0;
-		}
-		.paragraphs-icons_item {
-			padding: 20px 0;
-			font-size: 18px;
-			line-height: 30px;
-			flex-wrap: wrap;
-			.icon {
-				max-width: 90px;
-				height: 90px; 
-				width: 100%;
-				padding: 10px;
-				margin: 0 auto;
-				svg {
-					width: 90px;
-					height: 90px;
-				}
-			}
-		}
-		.icon-list {
-			padding: 30px 0;
-		}
-		.paragraph {
-			text-align: center;
-			margin-top: 20px;
-			p {
-				margin: 0;
-			}
-		}
-		@media (min-width: 575px) {
-			.paragraphs-icons_item {
-				flex-wrap: nowrap;
-			}
-			.paragraph {
-				margin-top: 0;
-				padding-left: 20px;
-				text-align: left;
-			}
-		}
-	}
-	@media (min-width: 992px) {
+	.block-iconbox-list {
 		.section-header {
-			min-height: 680px;
-		}
-		.page-title {
-			font-size: 48px;
-			line-height: 60px;
-			padding-top: 120px;
-		}
-		.paragraph-image-item {
-			margin-bottom: 90px;
-			.paragraph {
-				margin-top: 0;
-			}
-			&.reverse-order {
-				.image {
-					order: 2;
-				}
+			margin-bottom: 45px;
+			@media (min-width: 768px) {
+				margin-bottom: 90px;
 			}
 		}
-		.block-featured-products {			
-			.product-list {
-				>div:nth-child(even) {
-					.product-media {
-						order: 2;
-					}
-				}
-				>div:not(:last-child) {
-					padding-bottom: 60px;
-				}
-			}
-			.product-price {
-				margin-bottom: 20px;
-			}
-			.js-btn-redirect {
-				margin-top: 28px;
-				margin-bottom: 0;
-				max-width: 280px;
-			}
-		}
-		.block-paragraphs-with-icons {
-			.icon-list {
-				padding: 50px 0;
-			}
-			.block-body {
-				padding: 105px 0 112px;
-			}
+		.section-heading {
+			margin-bottom: 0;
+			padding-bottom: 3px;
 		}
 	}
-	@media (min-width: 1200px) {
-		.block-paragraphs-with-icons .paragraphs-icons_item {
-			padding-right: 80px;
-			padding-left: 30px;
-		}
-	} 
 }
-/* end section-page-story */
+/* End Careers */
+/* Our Story */
+.section-our-story,
+.section-product-detail {
+	> .section-wrapper > .section-header {
+		@media (min-width: 768px) {
+			margin-bottom: 57px;
+		}
+	}
+}
+/* End Our Story */
+
+
+
 
 /* section-page-wholesale */
 .section-page-wholesale {
@@ -1244,9 +1000,3 @@
 	}
 }
 /* end section-page-store-location */
-
-.template-page-testimonials {
-	#stamped-reviews-widget {
-		padding: 50px 0;
-	}	
-}

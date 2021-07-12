@@ -1,0 +1,58 @@
+.section-wrapper {		
+	.section-header {
+		&.postion-relative {
+			.image__style {
+				img {
+					object-fit: cover;
+				}
+			}
+			.title {
+				color: var(--main-color);
+				border-top: 4px solid var(--body-link);
+				padding: 28px 15px 44px;
+				font-weight: 700; 
+				h1 {
+					font-weight: inherit;	
+					@media (max-width: 767px){
+						font-size: inherit;
+					}
+				}			
+				@media (max-width: 767px) {
+					font-size: var(--heading-size-h2);
+					background-color: transparent !important;
+				}
+				@media (min-width: 768px) {
+					border: none;
+					min-height: 174px;				
+					@include ab(n, 0, 0, 0);
+				}
+			}
+			.subheading {
+				margin-top: 13px;
+				font-weight: 700;
+				@media (max-width: 767px) {
+					font-size: var(--heading-size-h5);
+				}
+			}
+			+ .container {
+				@media (max-width: 767px) {
+					padding: 0;
+					.section-body {
+						> div {
+							margin-left: 0;
+							margin-right: 0;
+							> section {
+								padding: 0;							
+							}
+							.ambassador-item_content,
+							.testimonial-item_content {
+								padding-left: 24px;
+								padding-right: 24px;
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+}
