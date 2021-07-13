@@ -336,6 +336,54 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+@mixin blog-item {
+    header {
+        margin: 0 auto 19px;
+        @media (min-width: 768px) {
+            margin-bottom: 26px;
+        }
+    }
+    footer {	
+        @media (max-width: 767px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .featured_blog__item-title {	
+            margin-bottom: 10px;							
+            @media (max-width: 767px) {
+                font-size: calc(var(--heading-size-h5) + 2px);				
+            }
+            @media (min-width: 768px) {
+                margin-bottom: 14px;
+            }
+            a {
+                color: inherit;
+                @media (min-width: 768px) {
+                    color: var(--main-color);
+                }
+            }
+        }
+        .featured_blog__item-excerpt {
+            margin: 0 auto 10px;
+            @media (min-width: 768px) {
+                margin-bottom: 15px;
+            }
+        }
+        .featured_blog__item-button {
+            a, button {	
+                font-size: var(--heading-size-h5);
+                color: var(--body-link);
+                display: inline-flex;
+                @media (min-width: 768px) {
+                    font-size: var(--heading-size-h4);
+                }
+                svg {
+                    margin-left: 10px;
+                }
+            }
+        }			
+    }
+}
 /*manage z-index*/ 
 @function layer($name) {
 @if map-has-key($layer, $name) {
