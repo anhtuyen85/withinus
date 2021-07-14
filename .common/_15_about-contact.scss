@@ -143,18 +143,9 @@
 			}
 		}		
 	}	
-	.btn-open-drawer {
-		height: 48px;
-		min-width: 190px;
-		padding: 10px 20px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border: 2px solid var(--body-link);
-		color: var(--body-link);			
-		font-size: 12px;
-		margin-bottom: 41px;
-		@include letter-spacing;
+	.btn-open-drawer {		
+		margin-bottom: 41px;		
+		@include btn-open-drawer;
 	}
 }
 .testimonial-list,
@@ -623,58 +614,7 @@
 			}
 		}
 	}
-	.faq-item {		
-		&:not(:last-child) {
-			margin-bottom: 12px;
-			@media (min-width: 768px) {
-				margin-bottom: 14px;
-			}
-		}
-		.question {
-			border: 2px solid var(--main-color);
-			padding: 14px 21px 14px 15px;
-			line-height: 1.4;
-			cursor: pointer;
-			background: #fff;
-			display: flex;
-			justify-content: space-between;
-			@media (min-width: 768px) {
-				padding: 12px 17px 12px 28px;
-			}
-			.question-content {
-				padding-right: 10px;
-			}
-			svg {
-				flex: 0 0 21px;
-				margin-top: 2px;
-			}			
-		}	
-		.answer {
-			background: #fff;			
-			height: 0;
-			overflow: hidden;
-			visibility: hidden;
-			transition: height .2s ease-in-out;				
-			p {
-				margin: 0;
-			}
-		}
-		&.active {		
-			.question {
-				border-bottom: none;
-			}
-			.answer {
-				height: auto;
-				visibility: visible;
-				padding: 5px 21px 20px 15px;						
-				border: 2px solid var(--main-color);
-				border-top: none;
-				@media (min-width: 768px) {
-					padding: 5px 45px 20px 28px;
-				}
-			}
-		}
-	}	
+	@include faqs;
 	.section-heading_wrapper {
 		text-align: center;
 		@media (max-width: 767px) {

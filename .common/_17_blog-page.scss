@@ -10,19 +10,28 @@
 			align-items: center;
 			justify-content: center;
 			margin: 0 -15px 21px;
-			flex-wrap: wrap;
+			flex-wrap: wrap;			
 			> div {
 				padding: 0 15px;
 				margin-bottom: 13px;
+				&.drawer {
+					padding: 0;
+					margin: 0;
+				}
 			}			
 			@media (min-width: 768px) {
 				margin-bottom: 30px;
 				justify-content: space-between;
 			}
 		}
-		.blog-filter {
-			display: flex;
-			align-items: center;			
+		.btn-open-drawer {				
+			@include btn-open-drawer;
+		}
+		.blog-filter {			
+			align-items: center;		
+			@media (min-width: 768px) {
+				display: flex !important;
+			}
 			> span { 
 				color: var(--main-color);
 				font-size: var(--heading-size-h4);
@@ -52,10 +61,11 @@
 						width: 13px;
 					}
 				}
-				&.active {
+				&:hover {
 					.blog-tags {
 						visibility: visible;
 						z-index: 9;
+						opacity: 1;
 					}
 				}
 			}
@@ -65,7 +75,9 @@
 				min-width: 220px;
 				background: var(--text-miscellaneous);
 				visibility: hidden;				
-				z-index: -1;				
+				z-index: -1;		
+				opacity: 0;
+				@extend %transition;		
 				@include ab(100%, 0, n, n);
 				li {
 					a {						
