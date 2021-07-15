@@ -348,7 +348,13 @@
       @include padding-start(15px);
       width: 100%;
       .js-title {
-        font-weight: 600;
+        font-weight: 700;
+        color: var(--body-color);
+        @media (hover : hover) {
+          &:hover {
+            color: var(--main-color);
+          }
+        }
       }
       .price {
         font-size: 14px;

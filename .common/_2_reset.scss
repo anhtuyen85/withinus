@@ -129,7 +129,20 @@ label {
 video {
   max-width: 100%;
 }
-
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  appearance: none;
+  -webkit-appearance:none;
+  margin: 0;
+}
+summary::marker {
+  display: none;
+}
+summary::-webkit-details-marker {
+  display:none;
+}
 button {
   border: none;
   outline: none;
@@ -147,9 +160,19 @@ form {
   margin: 0;
 }
 
-select, input, textarea {
+select, textarea {
   background: none;
   appearance: none;
+}
+input:not[type="number"] {
+  appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input:not[type="number"]::-webkit-outer-spin-button,
+input:not[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 select:focus, input:focus, textarea:focus {
@@ -518,15 +541,6 @@ img {
     top: 0;
   }
 }
-
-.product-quantity input[type="number"] {
-  -moz-appearance: textfield;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
 .overlay-ui {
   position: absolute;
   left: 0;
@@ -974,36 +988,31 @@ input::-webkit-inner-spin-button {
     li {
       margin: 0 4px;
       a {
-        display: block;
-        text-align: center;
-        padding: 9px 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+        padding: 5px;
         width: 40px;
         height: 40px;
         opacity: 0.9;
-        color: var(--body-second-color);
-        border: 1px solid var(--body-second-color);
+        color: var(--body-link);
+        border: 1px solid var(--body-link);
       }
       &.active, &:hover {
         a {
-          border-color: var(--body-border-color);
-          color: var(--body-border-color);
+          background: var(--body-link);
+          color: var(--text-miscellaneous);
           opacity: 1;
-        }
-        svg {
-          path {
-            stroke: var(--body-border-color);
-          }
-        }
+        }       
       }
+    }
+    .svg-element-ui {
+      color: inherit;
     }
     svg {
       width: 14px;
-      height: 14px;
-      position: relative;
-      top: 2px;
-      path {
-        stroke: var(--body-second-color);
-      }
+      height: 14px;      
+      color: inherit;
     }
   }
 }
