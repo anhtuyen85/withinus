@@ -1924,10 +1924,7 @@ img {
     max-width: 600px;
     margin: 0 auto;
     padding-bottom: 60px;
-  }
-  .product-item {
-    margin-bottom: 15px;
-  }
+  } 
   .form-group {
     display: flex;
     align-items: center;
@@ -1943,6 +1940,13 @@ img {
         path {
           stroke: none;
         }
+      }
+    }
+  }
+  .product-type {
+    .d-grid {
+      @media (min-width: 768px) {
+        gap: 50px 30px;
       }
     }
   }
@@ -2104,4 +2108,13 @@ main#main-content .shopify-policy__container {padding-top:3%;}
     text-align: center;
     @include blog-item;
   }
+}
+.section-featured-products,
+.section-product-related,
+.section-shop-bundles {
+	.slider-list {		
+		@media (min-width: 1025px) {
+			padding-bottom: 20px;
+		}
+	}
 }
