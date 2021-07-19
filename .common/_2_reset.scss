@@ -30,7 +30,9 @@ body {
     line-height: 1.35;
   }
 }
-
+#main-content {
+  margin-top: auto;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -186,7 +188,9 @@ select, input {
 select {
   max-width: 100%;
   padding: 0 var(--gutter-md);
-  line-height: 40px;
+  line-height: 48px;
+  height: 48px;
+  border: 2px solid var(--main-color);
 }
 
 input, textarea {
