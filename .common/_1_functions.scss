@@ -343,11 +343,19 @@
             margin-bottom: 26px;
         }
     }
+    .featured_blog__item-image {
+        .image__style {
+            // padding-top: 74.153% !important;
+            // img {
+            //     object-fit: cover;
+            // }
+        }            
+    }
     footer {	
         @media (max-width: 767px) {
             padding-left: 15px;
             padding-right: 15px;
-        }
+        }       
         .featured_blog__item-title {	
             margin-bottom: 10px;							
             @media (max-width: 767px) {
@@ -364,9 +372,20 @@
             }
         }
         .featured_blog__item-excerpt {
-            margin: 0 auto 10px;
+            margin: 0 auto 10px;            
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            max-height: 48px;
             @media (min-width: 768px) {
-                margin-bottom: 15px;
+                margin-bottom: 15px;                
+            }
+            p {
+                margin-top: 0;
+            }
+            img {
+                display: none;
             }
         }
         .featured_blog__item-button {
@@ -457,40 +476,39 @@
 }
 /*manage z-index*/ 
 @function layer($name) {
-@if map-has-key($layer, $name) {
-@return map-get($layer, $name);
-}
-@warn "The key #{$name} is not in the map ’$layer’";
-@return null;
+    @if map-has-key($layer, $name) {
+     @return map-get($layer, $name);
+    }
+    @warn "The key #{$name} is not in the map ’$layer’";
+    @return null;
 };
-$layer: (
-    
-header: 13,    
-featured_product-overlay: 3,
-hover_style-2: 1,
-mobile-dropdown-submenu: 2,
-js-tns-controls: 8,
-card_section-content: 4,
-chosen-results: 5,
-login-or: 6,
-contact-page-container: 7,
-select-variant: 8,
-sort-by: 20,
-product-card_icon-list: 10,
-header-label: 9,
-back-to-top: 30,
-mobile-bar: 35,
-sidebarDrawer-close: 66,
-header-style-2: 70,
-search-results: 90,
-card_footer-mobile--menu: 25,
-header-cart_dropdown: 100,
-header-sticky: 105,
-modal-cart-notify: 106,
-drawer_overlay: 111,
-sidebarDrawer: 113,
-lazy-drawer-cart: 205,
-header-mobile__vertical: 220,
-header-mobile__horizontal: 250,
+$layer: (    
+    header: 13,    
+    featured_product-overlay: 3,
+    hover_style-2: 1,
+    mobile-dropdown-submenu: 2,
+    js-tns-controls: 8,
+    card_section-content: 4,
+    chosen-results: 5,
+    login-or: 6,
+    contact-page-container: 7,
+    select-variant: 8,
+    sort-by: 20,
+    product-card_icon-list: 10,
+    header-label: 9,
+    back-to-top: 30,
+    mobile-bar: 35,
+    sidebarDrawer-close: 66,
+    header-style-2: 70,
+    search-results: 90,
+    card_footer-mobile--menu: 25,
+    header-cart_dropdown: 100,
+    header-sticky: 105,
+    modal-cart-notify: 106,
+    drawer_overlay: 111,
+    sidebarDrawer: 113,
+    lazy-drawer-cart: 205,
+    header-mobile__vertical: 220,
+    header-mobile__horizontal: 250,
 );
 /*end manage z-index*/

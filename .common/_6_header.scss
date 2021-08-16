@@ -58,14 +58,26 @@
       height: 100%;
     }
   }
+  .dropdown-menu::-webkit-scrollbar-track {
+    @extend %webkit-scrollbar-track;
+  }
+  .dropdown-menu::-webkit-scrollbar {
+    @extend %webkit-scrollbar;
+  }
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    @extend %webkit-scrollbar-thumb;
+  }
   .dropdown-menu {
     @include ab(100%,0,n,0);
     opacity: 0;
     visibility: hidden;
     z-index: 111;
     will-change: transform;
-    @extend %transition;
     border-bottom: 1px solid transparent;
+    max-height: 75vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+    @extend %transition;    
     &:after {
       content: '';
       height: 20px;
@@ -132,8 +144,21 @@
   }    
 }
 .mega-menu {
+  .top-text-wrapper {
+    display: flex;    
+    .top-text-inner {
+      flex: 1;    
+      padding: 16px 0 0;
+      text-align: center;
+    }
+    a {
+      color: var(--body-color) !important;
+      text-transform: uppercase;
+      font-size: var(--heading-size-h4);
+    }
+  }
   .mega-menu-list {    
-    padding: 0 15px;
+    padding: 16px 15px 25px;
     margin: 0 auto;
     max-width: 1440px;
     .row {
@@ -141,7 +166,7 @@
       margin-right: -10px;
     }
     >.text-right {      
-      padding: 0 0 44px;
+      padding: 0 0 20px;
       a {
         display: inline-block;
         font-weight: 700;
@@ -161,12 +186,24 @@
   }
 }
 .mega-menu-item {
-  padding: 36px 10px;
+  padding: 20px 10px 30px;
   .title {
     text-align: center;
-    font-size: calc(var(--heading-size-h4) - 2px);
+    font-size: 22px;
+    line-height: 24px;
+    > a:not(.title-image) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;     
+      margin: 0 -5px;
+    } 
     .image__style {
-      margin-top: 7px;
+      margin-top: 2px;
+      padding-top: 68% !important;
+      img {
+        object-fit: cover;
+      }
     }
   }
   .menu-list {
@@ -174,6 +211,9 @@
     text-transform: uppercase;        
     @include font-14;
     @include letter-spacing;
+    &:empty {
+      display: none;
+    }
     li {
       @media (hover : hover) {
         &:hover {
@@ -329,8 +369,7 @@
 }
 .results {
   display: none;
-  border: 1px solid var(--body-border-color);
-  border-top: 0;
+  border: 1px solid var(--body-border-color);  
   .btn-view-all {
     display: block;
     text-align: center;
@@ -469,11 +508,26 @@
     @include translateX(-100%);
     @extend %transition;
     background: var(--body-bg-color);
-    @include fixed(63px,0,0,0);    
+    @include fixed(0,0,0,0);    
     width: 100%;
     z-index: layer(header-mobile__horizontal);
     display: flex;
     flex-direction: column;
+    > .btn-close {
+      width: 50px;
+      height: 50px;
+      display: block;
+      padding: 13px;
+      margin-left: auto;
+      margin-right: 14px;
+      svg {        
+        width: 24px;
+        height: 24px;
+        path {
+          fill: var(--main-color);
+        }
+      }
+    }
     &.is-open {
       @include translateX(0);
     }
@@ -481,7 +535,7 @@
   .drawer-body {
     width: 100%;
     height: 100%;    
-    padding: 30px 0 80px;
+    padding: 10px 0 80px;
     text-align: center;
     margin: 0 auto;    
     .menu-list {
