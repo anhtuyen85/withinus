@@ -74,10 +74,10 @@
     z-index: 111;
     will-change: transform;
     border-bottom: 1px solid transparent;
-    max-height: 75vh;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
-    @extend %transition;    
+    transition: all 0.2s ease-in-out 0s;
     &:after {
       content: '';
       height: 20px;

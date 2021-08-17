@@ -453,20 +453,26 @@
 			overflow: hidden;
 			visibility: hidden;
 			transition: height .2s ease-in-out;				
+            font-weight: 400;
 			p {
 				margin: 0;
+                font-weight: 400;                
 			}
 		}
 		&.active {		
 			.question {
 				border-bottom: none;
+                border-color: var(--body-link);
 			}
+            svg path {
+                stroke: var(--body-link);
+            }
 			.answer {
 				height: auto;
 				visibility: visible;
 				padding: 5px 21px 20px 15px;						
-				border: 2px solid var(--main-color);
-				border-top: none;
+				border: 2px solid var(--body-link);
+				border-top: none;                
 				@media (min-width: 768px) {
 					padding: 5px 45px 20px 28px;
 				}
