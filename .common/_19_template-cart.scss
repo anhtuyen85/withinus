@@ -22,10 +22,7 @@
 			height: 43px;
 		}
 		h1 {
-			padding: 10px 0 30px;	
-			@media (min-width: 768px) {
-				margin-bottom: 70px;
-			}
+			padding: 10px 0 30px;				
 		}
 	}
 	.cart-form { 
@@ -179,7 +176,7 @@
 				&:not(:last-child) {
 					margin-bottom: 30px;
 					@media (min-width: 768px) {
-						margin-bottom: 79px;
+						margin-bottom: 40px;
 					}
 				}
 				.line-item_wrapper {
@@ -233,7 +230,15 @@
 		}
 		.option, .order-discount li {						
 			margin: 5px 0;
-			color: var(--body-color);
+			color: var(--body-color);			
+		}
+		.order-discount li {
+			color: var(--main-color);
+			line-height: 1.6;			
+			@include font-14;
+			span[data-cart-item-discount-title] {
+				font-weight: 400;
+			}
 		}
 		.btn-remove {			
 			padding-bottom: 3px;			

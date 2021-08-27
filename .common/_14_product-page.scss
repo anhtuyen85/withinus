@@ -176,6 +176,10 @@
 	}		
 	.btn-add-to-cart {
 		width: 100%;		
+		@media (max-width: 767px) {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
 	}		
 	.js-tns-controls {
 		display: none;
@@ -205,6 +209,7 @@
 }
 .product_short-desc {
 	margin: 12px 0;
+	font-weight: 400;
 	p {
 		margin: 0;
 	}
@@ -228,7 +233,7 @@
 	.swatch-select {
 		display: grid;
 		gap: 8px 12px;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		@media (min-width: 768px){
 			grid-template-columns: repeat(3, 1fr);
 			gap: 6px;
@@ -262,9 +267,9 @@
 			}
 			&.disabled {
 				label {
-					background: #fff !important;
-					border-color: #bdbdbd !important;
-					color: #bdbdbd !important;
+					background: #fff;
+					border-color: #bdbdbd;
+					color: #bdbdbd;
 					position: relative;
 					&:after {
 						content: "";
@@ -272,6 +277,11 @@
 						transform: rotateY(160deg);						
 						@include ab(0, 0, 0, 0);
 					}
+				}
+				input:checked + label {
+					background: #bdbdbd;
+					color: #fff;
+					border-color: #bdbdbd;
 				}
 			}
 		}
@@ -290,9 +300,37 @@
 	padding-top: 14px;
 	padding-bottom: 14px;
 }
-.product-quantity-wrapper {
+.group-qty-discount {
 	margin-top: 16px;
 	margin-bottom: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
+	.qty-discount {
+		flex: 1;
+		padding: 12px 0 0;	
+		@media (min-width: 768px) {
+			padding-top: 0;
+			padding-left: 20px;
+		}
+		.qd-item {
+			color: var(--main-color);
+			font-weight: 400;
+			line-height: 1.6;
+			@include font-14;			
+		}
+	}
+}
+.product-quantity-wrapper {		
+	flex: 0 0 100%;
+	flex: 0 0 100%;
+	@media (min-width: 768px) {
+		flex: 0 0 143px;
+		max-width: 143px;
+	}
 	.product-field-title {
 		@include font-14;
 		@include letter-spacing;
@@ -344,7 +382,7 @@
 }
 .sealsubs-target-element {
 	.sls-purchase-options-label {
-		margin-bottom: 14px;
+		margin-bottom: 10px;
 		text-transform: uppercase;
 		color: var(--body-color);
 		text-align: center;
@@ -368,12 +406,12 @@
 		margin-right: -6px;
 	}
 	> div {
-		padding: 0 5px 5px !important;
+		padding: 0 5px 10px !important;
 		border: none !important;
 		display: flex;
 		align-items: flex-start;
-		flex: 0 0 50%;
-		max-width: 50%;		
+		flex: 0 0 100%;
+		max-width: 100%;		
 		@media (min-width: 768px) {
 			padding-left: 6px !important;
 			padding-right: 6px !important;
@@ -426,7 +464,7 @@
 		// align-items: center;
 		// height: 100%;
 		width: 100%;
-		min-height: 77px;
+		min-height: 48px;
 		@media (min-width: 768px) {
 			min-height: 70px;
 		}
@@ -1067,11 +1105,12 @@
 	.left-content {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
+		// align-items: center;
 		justify-content: center;
 		margin: 0 -5px;
 		@media (max-width: 475px) {
 			flex-direction: column;		
+			align-items: center;
 		}
 		.product-bundle-item {
 			flex: 0 0 330px;
@@ -1080,6 +1119,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;			
+			height: inherit;
 			@media (max-width: 475px) {
 				width: 100%;
 			}			
@@ -1091,7 +1131,10 @@
 				text-align: center;	
 				font-size: calc(var(--body-font-size) - 2px);		
 				border: 1px solid rgba(198, 198, 198, 0.55);
-				padding: 6px;
+				padding: 6px 6px 15px;	
+				height: 100%;		
+				display: flex;
+				flex-direction: column;	
 				.block-image {
 					position: relative;	
 					margin-bottom: 8px;	
@@ -1115,13 +1158,15 @@
 					line-height: inherit;
 					font-size: inherit;
 					color: #788188;
-					margin: 12px auto 9px;
+					margin-top: auto;		
+					margin-bottom: 0;			
 				}				
 				.p-title {
 					// font-size: inherit;
 					// line-height: inherit;
 					// font-weight: 400;
-					// line-height: 24px;					
+					// line-height: 24px;		
+					margin-bottom: 12px;			
 				}				
 			}
 			.product-form {
@@ -1155,8 +1200,11 @@
 			justify-content: center;
 			background: #D0EEEE;
 			position: relative;
-			z-index: 1;
-			margin: 0 -19px;			
+			z-index: 1;			
+			margin-left: -19px;
+			margin-right: -19px;
+			margin-top: auto;
+			margin-bottom: auto;		
 			@media (max-width: 475px) {
 				margin: -19px 0;
 			}

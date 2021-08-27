@@ -18,7 +18,12 @@
 					padding: 0;
 					margin: 0;
 				}
-			}			
+				&.blog-search {					
+					@media (min-width: 767px) {
+						margin-left: auto;
+					}
+				}
+			}						
 			@media (min-width: 768px) {
 				margin-bottom: 30px;
 				justify-content: space-between;
@@ -192,6 +197,8 @@
 	@media (min-width: 768px) {
 		padding-top: 100px;
 		padding-bottom: 120px;
+		margin: 0 auto;
+		max-width: 50%;
 	}
 	.article-content_header {
 		margin-bottom: 30px;

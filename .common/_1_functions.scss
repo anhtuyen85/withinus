@@ -1,5 +1,5 @@
 /*key-frame*/
-/*@-webkit-keyframes animation-top-bottom {
+@-webkit-keyframes animation-top-bottom {
     0% {
         opacity: 0;
         -webkit-transform: translate(0, -30px);
@@ -50,37 +50,26 @@
                 transform: translateY(0);
     }
 }
-
-@-webkit-keyframes map-animation {
-    0% {
-        -webkit-transform: translateY(0px);
-                transform: translateY(0px);
+@keyframes animation-right-left {
+    from {
+        opacity: 0;
+        transform: translateX(610px);
     }
-    50% {
-        -webkit-transform: translateY(15px);
-                transform: translateY(15px);
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
-    100% {
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
+}  
+@keyframes animation-left-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
     }
-}
-
-@keyframe map-animation {
-    0% {
-        -webkit-transform: translateY(0px);
-                transform: translateY(0px);
+    to {
+        opacity: 0;
+        transform: translateX(610px);
     }
-    50% {
-        -webkit-transform: translateY(15px);
-        transform: translateY(15px);
-    }
-    100% {
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-    }
-}
-
+}   
 @keyframes shake {
     10%, 90% {
         transform: translate3d(-1px, 0, 0);
@@ -166,7 +155,7 @@
         transform: rotate(360deg); 
     }
 }
-*/
+
 @mixin ab($t, $l, $b, $r) {
     position: absolute;    
     @if $l != n { left: $l; }
@@ -421,7 +410,7 @@
 }
 @mixin faqs {
     .faq-item {		
-        text-align: left;
+        text-align: left;        
 		&:not(:last-child) {
 			margin-bottom: 12px;
 			@media (min-width: 768px) {
@@ -445,6 +434,9 @@
 			svg {
 				flex: 0 0 21px;
 				margin-top: 2px;
+                + svg {
+                    display: none;
+                }
 			}			
 		}	
 		.answer {
@@ -456,7 +448,10 @@
             font-weight: 400;
 			p {
 				margin: 0;
-                font-weight: 400;                
+                font-weight: 400;       
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
 			}
 		}
 		&.active {		
@@ -464,8 +459,17 @@
 				border-bottom: none;
                 border-color: var(--body-link);
 			}
-            svg path {
-                stroke: var(--body-link);
+            .question-content + svg {
+                display: none;
+            }
+            svg {
+                display: none;
+                path {
+                    fill: var(--body-link);
+                }
+                + svg {
+                    display: block;
+                }
             }
 			.answer {
 				height: auto;

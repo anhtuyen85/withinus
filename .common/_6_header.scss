@@ -7,6 +7,19 @@
       }
       a {
         display: flex;
+        position: relative;
+        .number {
+          width: 15px;
+          height: 15px;
+          z-index: inherit;
+          border-radius: 50%;
+          background: currentColor;
+          border: 2px solid #fff;
+          z-index: 1;
+          margin-top: -12px;
+          margin-right: -5px;
+          @include ab(100%, n, n, 0);
+        }
         &:hover {
           @media (hover : hover) {
             color: var(--body-link) !important;
@@ -14,7 +27,7 @@
               fill: currentColor;
             }
           }
-        }
+        }        
       }
     }
   }
@@ -158,7 +171,7 @@
     }
   }
   .mega-menu-list {    
-    padding: 16px 15px 25px;
+    padding: 16px 30px 25px;
     margin: 0 auto;
     max-width: 1440px;
     .row {
@@ -183,6 +196,54 @@
         }
       }
     }
+    &.top-text-true {
+      > div {
+        max-width: 76.5%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mega-menu-item {
+        padding-left: 20px;
+        padding-right: 20px;
+        &:first-child {
+          padding-right: 40px;
+          .menu-list_wrapper {            
+            &:after {
+              // content: '';
+              width: 1px;
+              background: #DEE2E4;
+              @include ab(48px, n, 0, -21px);
+            }  
+          }
+        }        
+        &:not(:first-child) {
+          .menu-list_wrapper {
+            padding-left: 20px;
+            &:before {
+              content: '';
+              width: 1px;
+              background: rgba(0, 0, 0, .3);
+              @include ab(48px, 0, 0, n);
+            }  
+          }
+        }
+        .menu-list_wrapper {
+          margin: 0 -20px;
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;          
+          >.title {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 20px;           
+            &:nth-child(1),
+            &:nth-child(2) {
+              padding-bottom: 16px;
+            }
+          }
+        }
+      }    
+    }
   }
 }
 .mega-menu-item {
@@ -200,7 +261,7 @@
     } 
     .image__style {
       margin-top: 2px;
-      padding-top: 68% !important;
+      padding-top: 66.66% !important;
       img {
         object-fit: cover;
       }
@@ -458,9 +519,23 @@
       height: 40px;
       display: flex;
       align-items: center;
-      &.header-hamburger {
-        color: var(--body-link) !important;
-        min-width: 23PX;
+      &.header-hamburger {        
+        min-width: 23px;
+      }
+      &.cart-icon {
+        position: relative;
+        .number {
+          width: 15px;
+          height: 15px;
+          z-index: inherit;
+          border-radius: 50%;
+          background: currentColor;
+          border: 2px solid #fff;
+          z-index: 1;
+          margin-top: -21px;
+          margin-right: -5px;
+          @include ab(100%, n, n, 0);
+        }
       }
     }
     .flags-currency {
@@ -504,15 +579,18 @@
       }
     }
   } 
-  .header-mobile__item {
-    @include translateX(-100%);
-    @extend %transition;
-    background: var(--body-bg-color);
-    @include fixed(0,0,0,0);    
-    width: 100%;
+  .header-mobile__item {        
+    @include fixed(0,0,0,n);    
+    background: var(--body-bg-color);    
+    width: 100%;    
     z-index: layer(header-mobile__horizontal);
     display: flex;
     flex-direction: column;
+    transform: translateX(-100%);
+    transition: all 0.8s ease-in-out 0s;
+    a {
+      color: inherit;
+    }
     > .btn-close {
       width: 50px;
       height: 50px;
@@ -529,7 +607,7 @@
       }
     }
     &.is-open {
-      @include translateX(0);
+      transform: translateX(0);      
     }
   }
   .drawer-body {
@@ -542,6 +620,9 @@
       width: 100%;
       height: 100%;
       padding: 0 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       overflow: hidden;
       overflow-y: auto;
     }
@@ -597,12 +678,12 @@
       @include ab(0,-100%,n,n);
       width: 100%;
       height: 100%;
-      padding: 30px 0;
+      padding: 30px 0 100px;
       overflow-y: auto;
       z-index: layer(mobile-dropdown-submenu);
       background: var(--body-bg-color);
       will-change: transform;
-      @extend %transition;
+      transition: all .8s ease-in-out 0s;
     }
       .dropdown-menu {
         &.is-open {

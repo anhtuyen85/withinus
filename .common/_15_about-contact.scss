@@ -616,7 +616,7 @@
 		}
 	}		
 }
-.section-faqs {	
+.section-faqs {			
 	.faq-content {
 		.grid-gap-30 {
 			row-gap: 12px;			
@@ -791,48 +791,103 @@
 
 /* section-page-store-location */
 .section-page-store-location {
-	padding: 100px 0;
-	background: #fef1e7;
+	padding: 60px 0;	
+	@media (min-width: 768px) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
 	.page-title {
 		font-size: 32px;
 		line-height: 50px;
 		font-weight: 700;
-		margin-bottom: 50px;
-		color: var(--body-second-color);
+		margin-bottom: 30px;		
+		color: var(--main-color);
+		@media (min-width: 768px) {
+			margin-bottom: 50px;
+		}
+	}
+	.brands-wrapper {
+		.item {
+			padding: 15px;
+		}
+		@media (min-width: 768px) {
+			display: flex;
+			margin: 20px -15px 50px;
+			.item {				
+				flex: 1;
+				min-width: 0;
+			}
+		}
 	}
 	.map-search {
-		background: #EFEFEF;
+		background: #fff;
 		padding: 30px 20px;
 		margin-bottom: 40px;
 		.btn {
 			min-width: 200px;
-			border-radius: 0;
-			background: #646161;
-			height: 45px;
+			border-radius: 0;			
+			height: 48px;
+			padding: 0;
+			line-height: 48px;
 			font-size: 18px;
 			margin: 10px;
+			@media (max-width: 767px) {
+				margin-left: 0;
+				margin-right: 0;
+			}
 		}
 	}
 	.map-search_form {
 		flex-wrap: wrap;
 	}
 	.map-search_item {
-		margin: 11px;
+		padding: 11px;
+		@media (min-width: 768px) and (max-width: 1099px) {
+			flex: 0 0 33.333333%;
+			max-width: 33.333333%;
+			&:first-child {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		@media (max-width: 767px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			flex-wrap: wrap;
+			padding-left: 0;
+			padding-right: 0;
+		}
 		input {
-			width: 200px;
-			height: 45px;
+			min-width: 200px;
+			flex: 1;
+			height: 48px;
 			background: #fff;
 			border-radius: 0;
+			text-transform: inherit;
+			padding: 5px 15px;
+			font-size: var(--body-font-size);
+			@media (max-width: 767px) {
+				width: 100%;
+			}
 		}
 	}
 	.title {
-		font-size: 18px;
+		font-size: var(--body-font-size);
 		line-height: 30px;
 		padding-right: 20px;
+		@media (max-width: 767px) {
+			width: 100%;
+			padding: 0 0 15px;
+			margin: 0;
+		}
 	}
 	.select-group {
 		position: relative;
 		min-width: 105px;
+		flex: 1;
+		@media (max-width: 767px) {
+			width: 100%;
+		}
 		svg {
 			position: absolute;
 			right: 10px;
@@ -841,11 +896,12 @@
 			pointer-events: none;
 		}
 		select {
-			padding: 0 15px;
-			line-height: 45px;
-			font-size: 18px;
+			padding: 0 25px 0 15px;
+			line-height: 48px;
+			font-size: var(--body-font-size);
 			background: #fff;
-			border-radius: 0;
+			border-radius: 0;			
+  			appearance: none;
 		}
 	}
 	.store-list {
@@ -854,6 +910,9 @@
 		height: 100%;
 		max-height: 650px;
 		overflow-y: auto;
+		@media (max-width:767px) {
+			margin-bottom: 40px;
+		}
 	}
 	.store-list::-webkit-scrollbar-track {
 		@extend %webkit-scrollbar-track;
@@ -916,10 +975,13 @@
 	.js-map-style {
 		padding: 16px 25px;
 		margin: 0 5px;
-		font-size: 24px;
+		font-size: var(--body-font-size);
+		font-weight: 700;
 		text-transform: uppercase;
 		background: #fff;
 		cursor: pointer;
+		font-family: var(--ff-body);
+		@include letter-spacing;
 		&:hover {
 			color: var(--main-color);
 		}

@@ -202,8 +202,7 @@ select {
 
 input, textarea {  
   border: 2px solid var(--main-color);
-  color: var(--body-second-color);
-  text-transform: uppercase;  
+  color: var(--body-second-color);  
   background: transparent;  
   border-radius: 0;
   @include letter-spacing;    
@@ -1712,20 +1711,22 @@ img {
 .drawer_body::-webkit-scrollbar-thumb {
   @extend %webkit-scrollbar-thumb;
 }
+
 .drawer-cart {
   display: flex;
   .lazy-drawer-cart {
-    @include fixed(0,n,0,0);    
-    @include translateX(100%);
+    @include fixed(0,n,0,0);            
     background: var(--body-bg-color);
-    z-index: layer(lazy-drawer-cart);
-    transition: 0.3s all ease-in-out;    
+    z-index: layer(lazy-drawer-cart);         
     padding: 20px;    
     color: #000;
     width: 100%;
-    max-width: 610px;
-    display: flex;
+    max-width: 610px;    
     flex-direction: column;
+    display: flex;
+    // animation: animation-left-right .8s both;     
+    transition: all 0.8s ease-in-out 0s;    
+    transform: translateX(610px);
     @media (min-width: 610px) {      
       padding: 25px 35px;         
     }
@@ -1734,12 +1735,7 @@ img {
       font-size: 22px;
     }
     .drawer_body {
-      overflow-y: auto;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #4B5759; 
-      @media (min-width: 768px) {
-        margin-bottom: 30px;
-      }
+      overflow-y: auto;      
     }
     form {
       width: 100%;
@@ -1747,12 +1743,12 @@ img {
     }
   }
   &.is-open {
-    .lazy-drawer-cart {
-      transform: translateX(0);
-      transition: 0.3s all ease-in-out;
+    .lazy-drawer-cart {      
+      // animation: animation-right-left .8s both;             
+      transform: translateX(0); 
     }
     .lazy-drawer-cart >.svg-loading {
-      display: block;
+      display: block;      
     }
     .cart-list {
       @extend %animation-active;
@@ -1790,8 +1786,13 @@ img {
     text-transform: capitalize;
     padding: 0 10px;
   }
-  .order-discount li {
-    color: var(--body-color);
+  .order-discount li {        
+    color: var(--main-color);
+    line-height: 1.6;
+		@include font-14;
+    span[data-cart-item-discount-title] {
+      font-weight: 400;
+    }
   }
   .drawer_header {
     display: flex;
